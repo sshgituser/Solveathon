@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="269" viewBox="0 0 750 240" role="img" aria-labelledby="cycle-title cycle-desc" lang="ru">
+  <title id="cycle-title">E02 · Три фазы одного цикла</title>
+  <desc id="cycle-desc">Три положения руки в профиль: сгиб, разгибание и возврат. Плечо и локоть остаются на месте; направление движения предплечья показывают стрелки. Числа обозначают фазы, а не углы.</desc>
+  <rect width="750" height="240" fill="#F6F7F3" />
+  <path fill="#D6EDE4" d="M0 167Q172 151 348 168T750 159V240H0Z" />
+  <g id="phase-01" transform="translate(0 0)" stroke-linejoin="round" stroke-linecap="round">
+    <text x="9" y="36" font-family="Consolas, monospace" font-size="38" fill="#203D77">01</text>
+    <g transform="translate(-12 -30) scale(1.2)">
+      <path id="upper-arm-1" fill="#DCE8FE" stroke="#172947" stroke-width="3.5" d="M47 80Q50 65 65 66Q76 66 84 84L106 123Q111 135 103 141Q93 149 84 138L56 105Q44 91 47 80Z" />
+      <path fill="#234EB5" stroke="#172947" stroke-width="3.5" d="M24 107Q26 82 39 65Q48 52 63 55Q77 57 83 71L89 85Q78 98 57 103L50 95L46 114Z" />
+      <path fill="#203D77" d="M54 97Q73 92 86 79L89 85Q75 99 57 103Z" />
+      <g id="forearm-1" transform="translate(96 132) rotate(-51)">
+        <path fill="#DCE8FE" stroke="#172947" stroke-width="3.5" d="M-8 -6Q-4 -12 12 -12Q33 -13 61 -6L74 -5Q81 -7 88 -12Q93 -15 92 -10L88 -5L101 -4Q108 -3 106 1Q105 4 100 4L88 6Q79 7 73 4Q45 6 17 11Q1 15 -6 9Q-12 4 -8 -6Z" />
+        <path fill="none" stroke="#203D77" stroke-width="2.8" d="M-3 5q4 5 10 3M89 0l12 1" />
+      </g>
+    </g>
+  </g>
+  <g id="phase-02" transform="translate(250 0)" stroke-linejoin="round" stroke-linecap="round">
+    <text x="9" y="36" font-family="Consolas, monospace" font-size="38" fill="#203D77">02</text>
+    <g transform="translate(-12 -30) scale(1.2)">
+      <path id="upper-arm-2" fill="#DCE8FE" stroke="#172947" stroke-width="3.5" d="M47 80Q50 65 65 66Q76 66 84 84L106 123Q111 135 103 141Q93 149 84 138L56 105Q44 91 47 80Z" />
+      <path fill="#234EB5" stroke="#172947" stroke-width="3.5" d="M24 107Q26 82 39 65Q48 52 63 55Q77 57 83 71L89 85Q78 98 57 103L50 95L46 114Z" />
+      <path fill="#203D77" d="M54 97Q73 92 86 79L89 85Q75 99 57 103Z" />
+      <g id="forearm-2" transform="translate(96 132) rotate(53)">
+        <path fill="#DCE8FE" stroke="#172947" stroke-width="3.5" d="M-8 -6Q-4 -12 12 -12Q33 -13 61 -6L74 -5Q81 -7 88 -12Q93 -15 92 -10L88 -5L101 -4Q108 -3 106 1Q105 4 100 4L88 6Q79 7 73 4Q45 6 17 11Q1 15 -6 9Q-12 4 -8 -6Z" />
+        <path fill="none" stroke="#203D77" stroke-width="2.8" d="M-3 5q4 5 10 3M89 0l12 1" />
+      </g>
+      <path fill="none" stroke="#234EB5" stroke-width="4.5" d="M192 67Q222 97 217 140M207 128l10 13 11 -12" transform="translate(-19 0)" />
+    </g>
+  </g>
+  <g id="phase-03" transform="translate(500 0)" stroke-linejoin="round" stroke-linecap="round">
+    <text x="9" y="36" font-family="Consolas, monospace" font-size="38" fill="#203D77">03</text>
+    <g transform="translate(-12 -30) scale(1.2)">
+      <path id="upper-arm-3" fill="#DCE8FE" stroke="#172947" stroke-width="3.5" d="M47 80Q50 65 65 66Q76 66 84 84L106 123Q111 135 103 141Q93 149 84 138L56 105Q44 91 47 80Z" />
+      <path fill="#234EB5" stroke="#172947" stroke-width="3.5" d="M24 107Q26 82 39 65Q48 52 63 55Q77 57 83 71L89 85Q78 98 57 103L50 95L46 114Z" />
+      <path fill="#203D77" d="M54 97Q73 92 86 79L89 85Q75 99 57 103Z" />
+      <g id="forearm-3" transform="translate(96 132) rotate(-51)">
+        <path fill="#DCE8FE" stroke="#172947" stroke-width="3.5" d="M-8 -6Q-4 -12 12 -12Q33 -13 61 -6L74 -5Q81 -7 88 -12Q93 -15 92 -10L88 -5L101 -4Q108 -3 106 1Q105 4 100 4L88 6Q79 7 73 4Q45 6 17 11Q1 15 -6 9Q-12 4 -8 -6Z" />
+        <path fill="none" stroke="#203D77" stroke-width="2.8" d="M-3 5q4 5 10 3M89 0l12 1" />
+      </g>
+      <path fill="none" stroke="#234EB5" stroke-width="4.5" d="M217 142Q223 101 194 70M195 87l-2 -18 17 4" transform="translate(-19 0)" />
+    </g>
+  </g>
+</svg>

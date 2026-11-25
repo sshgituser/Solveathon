@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="300" viewBox="0 0 840 300" role="img" aria-labelledby="cover-title cover-desc" lang="ru">
+<title id="cover-title">Qolda / Қолда · E02</title><desc id="cover-desc">Иллюстрация к атласу движения. Человек сидит боком за столом; видны плечо, согнутый локоть и кисть. Это рисунок, а не кадр участника.</desc>
+<rect width="840" height="300" fill="#F6F7F3"/>
+<g id="daylight" fill="#D6EDE4"><path d="M503 0H840V225L420 240Z"/></g>
+<g id="index" fill="#203D77"><text x="33" y="89" font-family="Georgia,serif" font-size="72">E02</text><path d="M36 105H138V109H36Z"/></g>
+<g id="chair"><path fill="#203D77" d="M193 161Q203 156 216 159L247 276L302 279L300 292L249 292L251 300H230Z"/><path fill="#DCE8FE" d="M202 169L207 168L233 265L229 267Z"/></g>
+<g id="figure" stroke-linejoin="round" stroke-linecap="round">
+<path id="trousers" fill="#172947" d="M249 246Q287 234 339 240Q395 236 414 259Q426 273 437 300H239Q235 275 249 246Z"/>
+<path id="neck" fill="#DCE8FE" stroke="#172947" stroke-width="3" d="M316 71Q325 93 309 111L339 133L362 106Q347 95 355 77Z"/>
+<path id="face" fill="#DCE8FE" stroke="#172947" stroke-width="3" d="M315 36Q327 8 356 17Q378 23 378 44L377 52L385 66Q386 69 378 69L377 80Q375 92 364 91Q344 88 332 74Q322 75 316 65Z"/>
+<path id="hair" fill="#172947" d="M305 70Q290 67 293 53Q294 44 303 41Q301 23 315 14Q330 2 354 9Q371 7 381 22Q386 32 376 40Q370 35 365 30Q363 45 347 50L341 64Q338 51 331 54Q324 58 331 67L336 72Q329 78 317 78Z"/>
+<path fill="none" stroke="#172947" stroke-width="3" d="M368 48Q372 46 376 48M373 54l1 1M376 75l-5 1"/>
+<path id="shirt" fill="#234EB5" d="M311 96Q324 111 347 111L354 101Q367 104 373 119L370 169Q348 205 347 246Q303 261 243 253Q252 225 250 197Q246 153 270 122Q285 103 311 96Z"/>
+<path fill="#203D77" d="M345 151Q333 202 302 233Q314 230 325 223L318 249L347 246Q348 202 370 169Z"/>
+<path fill="none" stroke="#DCE8FE" stroke-width="3" d="M307 100Q321 119 345 117M254 245Q272 248 288 246"/>
+<path id="arm" fill="#DCE8FE" stroke="#172947" stroke-width="3.4" d="M354 170Q363 190 382 222Q392 242 407 237Q423 229 450 205L503 159Q511 153 522 154L541 155Q550 154 545 150L529 145L550 146Q559 146 554 141L533 134Q522 131 513 135L520 125Q522 119 517 120Q506 127 498 142Q478 155 448 170L411 192L389 154Z"/>
+<path id="sleeve" fill="#234EB5" stroke="#172947" stroke-width="3.4" d="M335 119Q344 105 359 109Q375 112 382 130L399 160Q382 176 355 183Q342 165 336 149"/>
+<path fill="#203D77" d="M352 176Q379 169 395 154L399 160Q383 177 355 183Z"/>
+<path fill="none" stroke="#203D77" stroke-width="3" d="M404 197q3 -3 8 -5M392 224q4 7 12 6M508 147q7 -7 15 -7M530 145l-7 -2"/>
+</g>
+<g id="table"><path fill="#D6EDE4" d="M498 227L840 213V247L440 249Z"/><path fill="#203D77" d="M440 249L840 236V248L440 260Z"/><path fill="#172947" d="M476 258L489 257L479 300H466Z"/><path fill="#F6F7F3" d="M604 229L715 224L760 230L637 236Z"/><path fill="#203D77" d="M637 236L760 230L753 233L638 239Z"/></g>
+</svg>
