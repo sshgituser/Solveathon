@@ -1,0 +1,112 @@
+{
+  "checked_at": "2026-11-25T07:02:04+05:00",
+  "checkout_commit": "b87b3f1f3beda28ec9d16a465a4ca180a764ef86",
+  "inspection": {
+    "candidate_manifest_contents_opened": 0,
+    "checkout_directory_metadata": {
+      ".": {
+        "immediate_directory_count": 19,
+        "other_metadata_candidate_count": 0,
+        "state": "present"
+      },
+      ".seriq-local": {
+        "state": "absent"
+      },
+      "artifacts/seriq": {
+        "immediate_directory_count": 0,
+        "other_metadata_candidate_count": 0,
+        "state": "present"
+      },
+      "data": {
+        "state": "absent"
+      },
+      "datasets": {
+        "state": "absent"
+      },
+      "docs": {
+        "immediate_directory_count": 2,
+        "other_metadata_candidate_count": 0,
+        "state": "present"
+      },
+      "local-data": {
+        "state": "absent"
+      },
+      "ml": {
+        "immediate_directory_count": 1,
+        "other_metadata_candidate_count": 0,
+        "state": "present"
+      },
+      "raw-data": {
+        "state": "absent"
+      },
+      "reports/ml": {
+        "immediate_directory_count": 4,
+        "other_metadata_candidate_count": 0,
+        "state": "present"
+      },
+      "tools": {
+        "immediate_directory_count": 2,
+        "other_metadata_candidate_count": 0,
+        "state": "present"
+      }
+    },
+    "documented_private_locations": {
+      "gpu_workspace": {
+        "immediate_directory_count": 14,
+        "other_metadata_candidate_count": 0,
+        "state": "present"
+      },
+      "historical_workspace": {
+        "state": "absent"
+      }
+    },
+    "gpu_workspace_dataset_top_only": {
+      "immediate_directory_count": 1,
+      "other_metadata_candidate_count": 0,
+      "state": "present"
+    },
+    "gpu_workspace_metadata_dir": {
+      "documented_public_a_manifest_present": true,
+      "immediate_directory_count": 0,
+      "other_metadata_candidate_count": 0,
+      "state": "present"
+    },
+    "media_files_opened_or_hashed": 0,
+    "notes": [
+      "Directory-entry metadata only; this is not a search outside the project-owned locations.",
+      "The documented public A manifest is excluded by identity, not opened or hashed.",
+      "No owner-pinned handoff for either cohort was supplied to this run."
+    ],
+    "old_holdout_and_quarantine_opened_or_hashed": false,
+    "project_evidence": [
+      "execplan/qolda-gpu-handoff.md:101-117",
+      "reports/ml/gpu-handoff/M0-M1-report.md:24-34,107-112"
+    ]
+  },
+  "metadata_only": true,
+  "schema": "qolda-e02-model-intake-audit-v1",
+  "training": {
+    "checkpoints_created": 0,
+    "optimization_steps": 0,
+    "trainer_invocations": 0
+  },
+  "variants": {
+    "B": {
+      "blockers": [
+        "missing_owner_pinned_owned_manifest"
+      ],
+      "corpus_scope": "qolda-owned-e02",
+      "status": "blocked_inputs",
+      "training": "not_run"
+    },
+    "C": {
+      "blockers": [
+        "missing_owner_pinned_owned_manifest",
+        "missing_owner_pinned_expanded_manifest"
+      ],
+      "corpus_scope": "qolda-owned-e02+approved-extension",
+      "status": "blocked_inputs",
+      "training": "not_run"
+    }
+  }
+}

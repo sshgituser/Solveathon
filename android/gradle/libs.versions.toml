@@ -1,0 +1,7 @@
+[versions]
+agp = "8.5.2"
+sdk = "34"
+min-sdk = "28"
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }

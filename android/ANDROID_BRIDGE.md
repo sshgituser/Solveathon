@@ -1,0 +1,29 @@
+# Android native bridge v1 — integration for the shared frontend
+
+Android packages the current common `frontend/index.html`, `frontend/src/**`, `frontend/styles/**` and its local assets. It does not replace those screens. The Android copy of `index.html` selects `seriq-profile=android` and `seriq-analyzer=ondevice` and loads the platform bridge before `src/main.js`. The common frontend owns onboarding, cabinet, settings, trackers, results and history. Android promises no account server or network. Browser/Windows keep their existing transports.
+
+## JavaScript API
+
+Detect Android with `globalThis.QoldaAndroid` or the Android delivery profile. The following method names and fields are stable for this release.
+
+| Call / event | Contract |
+|---|---|
+| `QoldaAndroid.health()` | Promise of `"ok"` after both graphs pass the GPU gates, `"nomodel"` if the models/GPU are unavailable, or `"down"` if the bridge is unreachable. |
+| `QoldaAndroid.exercises()` | Local-only equivalent of the [exercise catalog](../docs/contracts/extra-exercises.md). `readiness.android` for E02 uses native GPU health and (for live) the declared rear-camera feature, not a permission grant or a measured cycle. E01 and E03 are additional and unavailable on this APK; do not call the E02 analyzer or a network service for them. A technical shell without this method cannot supply the new catalog. |
+| `QoldaAndroid.pick()` | Opens system `ACTION_OPEN_DOCUMENT` under a user action. Returns `{kind:"ok", video:{token,name,type,size,hash}}`, `{kind:"canceled"}`, or `{kind:"error",status,code}`. `size` is actual bytes; `hash` is lowercase SHA-256 of the original grant; `name` is display-only text; `type` is `video/mp4` or `video/webm`. Retain the `video` object instead of a Blob. |
+| `QoldaAndroid.analyze(token, "scratch", abortSignal)` | Invoke only after explicit consent to local analysis. Returns `{kind:"ok",data}` where `data` is the existing `seriq.v1` result, or the same error/cancel envelope. Model `transfer` returns `503 model_unavailable`. |
+| `QoldaAndroid.release(token)` | Invalidates the matching selection for the current Activity. A new successful selection invalidates previous tokens. Do not store tokens in localStorage or export. |
+| `QoldaAndroid.liveStart("scratch", abortSignal)` | Opens the native rear-camera preview, requesting `CAMERA` only if needed and only when this user action is taken. The promise remains pending through one cycle and returns the final `{kind:"ok",data,key}` or the same error/cancel envelope. `key` is an opaque one-cycle history key and is not an input file hash. |
+| `qolda:live-progress` on `window` | `event.detail = {version:"seriq.live.v1",phase:"collecting"\|"ready",elapsedMs,uniqueFrames,rightVisibleFrames,visibleNow,provisional}`. `provisional` is either `null` or a `seriq.v1` wire result; it is display-only and must not enter history. |
+| `QoldaAndroid.liveFinish()` / `QoldaAndroid.liveCancel()` | Optional UI commands; the native preview already has explicit controls and automatically finishes one cycle at 30 seconds. Only the pending `liveStart` promise carries the final result. |
+| `QoldaAndroid.exportData(store.exportData(), "seriq-YYYY-MM-DD.json")` | Optional replacement for browser Blob-download on Android. Exports `seriq.export.v1` JSON via system local `ACTION_CREATE_DOCUMENT`. Returns `{kind:"ok"}` or the same error/cancel envelope. Limit 1 MiB. |
+
+No arbitrary path, URI, Blob, Base64, frames, or landmarks cross the messages. Do not call `clipHash`, `readDuration`, `URL.createObjectURL`, or the browser camera/`MediaRecorder` for a native selection. Do not substitute loopback HTTP when `ondevice` is selected. One file analysis **or** one live cycle at a time; a conflicting request gets `engine_busy`. Only the Android camera permission is declared; no audio, storage, or network permission. Android still works with camera permission denied, by using SAF.
+
+For a final file result, use `store.addAttempts(result.data, video.hash)`; for a final live result, use `store.addAttempts(result.data, result.key)`. Call only for `kind:"ok"`; `no_pose` has no attempts. The store deduplicates even when persistence is explicitly enabled. Android has a small RAM-only cache for file results, not a second history database. Do not write a result on abort or stale navigation. Bind both modes to the view's cancellation controller and release staged metadata when cleared. The `qolda:data-reset` event clears the native selection, cancels in-flight work and clears its transient cache. Camera also cancels on background, rotation, renderer loss and Android Back.
+
+Minimum client integration points: add the `android` delivery profile with `engineSettings:false` and `installHint:false`; adapt the picker, hash/preview branch and analyzer to the native calls; render local consent/only A; make the user action for live call `liveStart`. Leave shared screens, stats and trackers intact. Native errors use the same HTTP-style status/code envelope for the UI but never perform HTTP. Android-specific codes include `camera_unavailable`, `picker_unavailable`, `export_failed`, and 403 `forbidden` for denied access.
+
+## Native boundary
+
+The WebView serves only packaged static files on synthetic `https://appassets.androidplatform.net`, blocks other origins, navigation, frames and network; the host creates a `WebMessagePort` and transfers it to the trusted main frame only. There is no global Java object or raw URI bridge. The system (`Camera2`) surfaces are the only native preview. `ImageReader.acquireLatestImage()` and the bounded model-input queue avoid recording or retaining video. Only the GPU worker calls the learned models. Live samples are unique camera timestamps; observations are resampled onto the existing 64-phase policy. This is not byte-equivalent to file sampling or evidence of live accuracy.

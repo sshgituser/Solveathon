@@ -1,0 +1,44 @@
+/* Reset, document defaults, focus, motion preference. */
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; min-height: 100svh;
+  background: var(--ground); color: var(--ink);
+  font: 400 var(--t-body)/1.5 var(--sans);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+h1, h2, h3, h4, p, ol, ul, dl, dd, figure, fieldset, blockquote { margin: 0; padding: 0; }
+ol, ul { list-style: none; }
+fieldset { border: 0; min-width: 0; }
+legend { padding: 0; }
+table { border-collapse: collapse; }
+img, svg, video, canvas { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+a { color: var(--brand); text-underline-offset: 3px; }
+
+/* Titles speak in the serif at regular weight; the interface speaks in the sans. */
+h1, .title-l { font: 480 var(--t-title-l)/1.04 var(--serif); letter-spacing: -.045em; text-wrap: balance; overflow-wrap: break-word; }
+h2, .title-m { font: 400 var(--t-title-m)/1.14 var(--serif); letter-spacing: -.008em; text-wrap: balance; }
+h3, .title-s { font: 600 var(--t-lead)/1.3 var(--sans); }
+.lead { font-size: var(--t-lead); color: var(--ink-2); max-width: 34em; }
+.muted { color: var(--ink-2); }
+.small { font-size: var(--t-small); }
+.fine { font-size: var(--t-min); color: var(--ink-2); }
+
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* Focus: an ink ring with a white gap, visible on white, on the ground and on teal. */
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; box-shadow: 0 0 0 3px #fff; border-radius: 4px; }
+.rail :focus-visible, .tabbar :focus-visible { outline-color: #fff; box-shadow: 0 0 0 3px var(--rail); }
+#view:focus { outline: none; box-shadow: none; }
+
+::selection { background: var(--brand); color: #fff; }
+
+/* The app has its own motion switch (Cabinet) on top of the system setting: html.calm turns motion off. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
+html.calm *, html.calm *::before, html.calm *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }

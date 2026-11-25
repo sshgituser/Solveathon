@@ -1,0 +1,91 @@
+{
+  "schema": "qolda-jury-e02-summary-v1",
+  "exercise": "E02",
+  "model": "seriq-e02-forearm-1.0.0+ce3f55718b2d",
+  "measured_runtime_source_commit": "d8b10722302fc4b06d1219ee6641d28c1cbf0bfc",
+  "weights_sha256": "ce3f55718b2d7a325d4f6f642a66debba8ce74040eba2cff40958f997363917e",
+  "development_manifest_sha256": "8c73b2a35584639f3a2ea057878d39cf105c52ffa4d77a4a41639c2606134931",
+  "input_receipt_sha256": {
+    "fit": "b77459e3de1392e43ec0f667705fa7d25ea72cf7538b80589eeaba1ba73dd128",
+    "packaged_http": "3ef3f8430aef374bbcbcf89ce7f493caa4cfdebd877e869094d44080271d1c51"
+  },
+  "class_order": [
+    "incomplete",
+    "complete"
+  ],
+  "train_class_counts": [
+    47,
+    30
+  ],
+  "validation": {
+    "subjects": 1,
+    "class_counts": [
+      10,
+      10
+    ],
+    "used_for_model_selection": true,
+    "independent_test": false,
+    "A": {
+      "confusion": [
+        [
+          10,
+          0
+        ],
+        [
+          0,
+          10
+        ]
+      ],
+      "coverage": 1.0,
+      "balanced_accuracy": 1.0,
+      "f1_macro": 1.0,
+      "f1_complete": 1.0,
+      "n_abstain": 0
+    },
+    "majority_baseline": {
+      "prediction": "incomplete",
+      "confusion": [
+        [
+          10,
+          0
+        ],
+        [
+          10,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.5,
+      "f1_macro": 0.3333333333333333,
+      "f1_complete": 0.0
+    }
+  },
+  "packaged_file_api": {
+    "columns": [
+      "incomplete",
+      "complete",
+      "uncertain",
+      "no_attempt",
+      "multiple_attempts"
+    ],
+    "confusion": [
+      [
+        10,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        10,
+        0,
+        0,
+        0
+      ]
+    ],
+    "scored_validation_uploads": 20,
+    "blank_no_pose": true,
+    "http_status": 200,
+    "scratch_empty": true
+  }
+}

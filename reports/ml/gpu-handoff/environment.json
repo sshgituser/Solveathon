@@ -1,0 +1,52 @@
+{
+  "schema": "seriq-environment-v1",
+  "recorded_at": "2026-11-25T01:50:00+05:00",
+  "host": {
+    "os": "Windows 11 build 10.0.26300",
+    "shell": "git-bash",
+    "machine_changed": true,
+    "note": "This PC replaced the machine that produced reports/ml/forearm-v1/freeze.json (RTX 3050 Laptop, CUDA 12.6)."
+  },
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 5060 Ti",
+    "memory_total_mib": 16283,
+    "compute_capability": "12.0",
+    "driver": "617.42",
+    "cuda_runtime": "13.0",
+    "cudnn": 91900
+  },
+  "python": {
+    "version": "3.11.5",
+    "env": "isolated venv outside the checkout",
+    "torch": "2.11.0+cu130",
+    "torch_cuda_available": true,
+    "onnxruntime": "1.27.0",
+    "onnxruntime_providers": ["TensorrtExecutionProvider", "CUDAExecutionProvider", "CPUExecutionProvider"],
+    "onnx": "1.20.1",
+    "numpy": "2.2.6",
+    "opencv": "5.1.0",
+    "safetensors": "0.6.2"
+  },
+  "tools": {
+    "ffprobe": "8.1.2-full_build",
+    "jdk": "Temurin 17.0.11+9 at C:/prj/tools/jdk-17.0.11+9",
+    "gradle": "8.7 at C:/prj/tools/gradle-8.7",
+    "android_sdk": "C:/prj/android-sdk (platforms android-34/36/37, build-tools 34.0.0/36.0.0)",
+    "android_ndk": null,
+    "android_cmake": null,
+    "adb": "1.0.41 (37.0.1) at C:/prj/android-sdk/platform-tools",
+    "phone": {
+      "model": "CPH2399 (OnePlus)",
+      "soc": "MediaTek MT6893",
+      "gpu": "Mali-G77 MC9, OpenGL ES 3.2",
+      "android": "14 (API 34)",
+      "abi": "arm64-v8a"
+    }
+  },
+  "known_issue": "onnxruntime-gpu does not find its CUDA provider DLLs unless <site-packages>/torch/lib is added with os.add_dll_directory before the session is created; otherwise the provider silently stays CPU. ml/gpu.enable_cuda_dlls() does this.",
+  "android": {
+    "state": "toolchain_present_device_connected",
+    "sdk": "C:/prj/android-sdk",
+    "note": "Android tooling and a physical arm64-v8a phone are present; NDK and CMake are not installed yet, no LiteRT GPU delegation has been run."
+  }
+}

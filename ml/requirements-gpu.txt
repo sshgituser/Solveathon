@@ -1,0 +1,17 @@
+# Qolda strict-GPU runtime, pinned on the Windows development machine.
+# Python 3.11, native Windows (no WSL). This runtime is pinned to CUDA 13.
+# Install in an isolated environment:
+# python -m pip install --extra-index-url https://download.pytorch.org/whl/cu130 -r ml/requirements-gpu.txt
+torch==2.11.0+cu130
+onnxruntime-gpu==1.27.0
+onnx==1.20.1
+numpy==2.2.6
+safetensors==0.6.2
+opencv-contrib-python==5.1.0.95
+
+# Verified on this host:
+#   torch 2.11.0+cu130, CUDA runtime 13.0, cuDNN 9.19, ONNX Runtime 1.27.0
+#   NVIDIA GeForce RTX 5060 Ti, 16 GB, compute capability 12.0, driver 617.42
+# ORT resolves its CUDA provider DLLs against the PyTorch wheel: ml/gpu.enable_cuda_dlls()
+# adds <site-packages>/torch/lib to the process DLL search path before the session is
+# created. Without it the CUDA EP does not register and ORT silently keeps CPU only.

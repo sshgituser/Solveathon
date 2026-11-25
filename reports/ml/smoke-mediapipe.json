@@ -1,0 +1,30 @@
+{
+  "engine": "mediapipe",
+  "pose_model_sha256": "59929e1d1ee95287735ddd833b19cf4ac46d29bc7afddbbf6753c459690d574a",
+  "smoke": {
+    "by_class": {
+      "0": {
+        "n": 12,
+        "scorable": 0
+      },
+      "1": {
+        "n": 9,
+        "scorable": 0
+      }
+    },
+    "mean_joint_visibility": {
+      "11": 0.049107142857142856,
+      "12": 0.049107142857142856,
+      "13": 0.002232142857142857,
+      "14": 0.024553571428571428,
+      "15": 0.002976190476190476,
+      "16": 0.004464285714285714
+    },
+    "n": 21,
+    "reasons": {
+      "insufficient_visible_arm_triplet": 3,
+      "no_visible_arm_triplet": 18
+    },
+    "scorable": 0
+  }
+}

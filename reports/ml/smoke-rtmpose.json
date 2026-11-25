@@ -1,0 +1,29 @@
+{
+  "engine": "rtmpose",
+  "pose_model_sha256": "5c0a4bf67953e6d2ac43ce15e77dc9d5d354ae18430a47d2c5963a7bc5683e3c",
+  "smoke": {
+    "by_class": {
+      "0": {
+        "n": 12,
+        "scorable": 0
+      },
+      "1": {
+        "n": 9,
+        "scorable": 0
+      }
+    },
+    "mean_joint_visibility": {
+      "11": 0.0,
+      "12": 0.0,
+      "13": 0.7403273809523809,
+      "14": 0.9806547619047619,
+      "15": 0.5007440476190477,
+      "16": 0.9516369047619048
+    },
+    "n": 21,
+    "reasons": {
+      "no_visible_arm_triplet": 21
+    },
+    "scorable": 0
+  }
+}

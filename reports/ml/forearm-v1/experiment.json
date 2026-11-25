@@ -1,0 +1,572 @@
+{
+  "development_provenance": {
+    "all_native_frames_at_least_64": true,
+    "cache_sha256": "0a743997fb5ec8a1209d0fb0c143144d539ff75c104fcacb803a28c6b51ef409",
+    "n_verified": 97
+  },
+  "fit_abstain_reasons": {
+    "train": {
+      "incomplete_forearm_coverage": 5,
+      "insufficient_visible_forearm_pair": 1
+    },
+    "validation": {}
+  },
+  "fit_denominators": {
+    "train": 77,
+    "validation": 20
+  },
+  "fit_scorable_by_class": {
+    "train": {
+      "0": 42,
+      "1": 29
+    },
+    "validation": {
+      "0": 10,
+      "1": 10
+    }
+  },
+  "fit_status": "trained_both",
+  "manifest_sha256": "cce62bf549b541e20f22c7ff63318df239eaa96e5483a6015a1b86638645fdc8",
+  "mask_only": {
+    "threshold": 0.5,
+    "train": {
+      "abstain_reasons": {
+        "incomplete_forearm_coverage": 5,
+        "insufficient_visible_forearm_pair": 1
+      },
+      "balanced_accuracy": 0.6194581280788177,
+      "class_order": [
+        "incomplete",
+        "complete"
+      ],
+      "class_scored": [
+        42,
+        29
+      ],
+      "class_total": [
+        47,
+        30
+      ],
+      "confusion": [
+        [
+          39,
+          3
+        ],
+        [
+          20,
+          9
+        ]
+      ],
+      "coverage": 0.922077922077922,
+      "f1_complete": 0.43902439024390244,
+      "f1_macro": 0.6056508089833373,
+      "n": 77,
+      "n_abstain": 6,
+      "n_scored": 71,
+      "status": "ok",
+      "unconditional_balanced_recall": 0.5648936170212766
+    },
+    "validation": {
+      "abstain_reasons": {},
+      "balanced_accuracy": 0.55,
+      "class_order": [
+        "incomplete",
+        "complete"
+      ],
+      "class_scored": [
+        10,
+        10
+      ],
+      "class_total": [
+        10,
+        10
+      ],
+      "confusion": [
+        [
+          10,
+          0
+        ],
+        [
+          9,
+          1
+        ]
+      ],
+      "coverage": 1.0,
+      "f1_complete": 0.18181818181818182,
+      "f1_macro": 0.4357366771159875,
+      "n": 20,
+      "n_abstain": 0,
+      "n_scored": 20,
+      "status": "ok",
+      "unconditional_balanced_recall": 0.55
+    },
+    "variant": "class-weighted ridge on four coverage fractions and transitions"
+  },
+  "models": {
+    "A": {
+      "artifact": "A-tcn.safetensors",
+      "bytes": 10628,
+      "epoch": 36,
+      "kind": "A",
+      "manifest_sha256": "cce62bf549b541e20f22c7ff63318df239eaa96e5483a6015a1b86638645fdc8",
+      "pose_engine": "rtmpose",
+      "pose_model_sha256": "5c0a4bf67953e6d2ac43ce15e77dc9d5d354ae18430a47d2c5963a7bc5683e3c",
+      "pose_policy": "seriq-e02-forearm-2d-v1",
+      "reload": {
+        "labels_match": true,
+        "max_abs_probability_diff": 0.0,
+        "n_compared": 20
+      },
+      "seed": 601,
+      "sha256": "b6ea8019a2d18cb02e61e55671d6e76a8b12b85ab65ce2e1324abca59fcf832f",
+      "steps": 324,
+      "test": {
+        "abstain_reasons": {},
+        "balanced_accuracy": 1.0,
+        "class_order": [
+          "incomplete",
+          "complete"
+        ],
+        "class_scored": [
+          10,
+          10
+        ],
+        "class_total": [
+          10,
+          10
+        ],
+        "confidence_audit": {
+          "cutoff": 0.1,
+          "false_complete_at_or_above": 0,
+          "n_at_or_above": 20,
+          "n_below": 0
+        },
+        "confusion": [
+          [
+            10,
+            0
+          ],
+          [
+            0,
+            10
+          ]
+        ],
+        "coverage": 1.0,
+        "f1_complete": 1.0,
+        "f1_macro": 1.0,
+        "n": 20,
+        "n_abstain": 0,
+        "n_scored": 20,
+        "status": "ok",
+        "unconditional_balanced_recall": 1.0
+      },
+      "threshold": 0.5,
+      "train": {
+        "abstain_reasons": {
+          "incomplete_forearm_coverage": 5,
+          "insufficient_visible_forearm_pair": 1
+        },
+        "balanced_accuracy": 1.0,
+        "class_order": [
+          "incomplete",
+          "complete"
+        ],
+        "class_scored": [
+          42,
+          29
+        ],
+        "class_total": [
+          47,
+          30
+        ],
+        "confidence_audit": {
+          "cutoff": 0.1,
+          "false_complete_at_or_above": 0,
+          "n_at_or_above": 71,
+          "n_below": 0
+        },
+        "confusion": [
+          [
+            42,
+            0
+          ],
+          [
+            0,
+            29
+          ]
+        ],
+        "coverage": 0.922077922077922,
+        "f1_complete": 1.0,
+        "f1_macro": 1.0,
+        "n": 77,
+        "n_abstain": 6,
+        "n_scored": 71,
+        "status": "ok",
+        "unconditional_balanced_recall": 0.9301418439716311
+      },
+      "training": {
+        "frozen_tensors_verified": 0,
+        "hyperparameters": {
+          "batch": 8,
+          "epochs": 36,
+          "lr": 0.002
+        },
+        "initial_tensor_sha256": "cf055015276a19b5fcfacfa1777c659176f93e5798e3157e0b736e0cabd06603",
+        "objective": "class-balanced BCE, AdamW",
+        "parameters_total": 2321,
+        "parameters_trainable": 2321,
+        "peak_cuda_allocated_bytes": 20440576,
+        "seconds": 5.187,
+        "selected_tensor_sha256": "243341413456f31acb6390767d24441c2e1711f3cf7ab6b80351fb02562d9a81",
+        "steps_executed": 324,
+        "tensor": "conv.0.weight",
+        "trainable_tensors": 8,
+        "updated_tensors": [
+          "conv.0.weight",
+          "conv.0.bias",
+          "conv.2.weight",
+          "conv.2.bias",
+          "head.0.weight",
+          "head.0.bias",
+          "head.3.weight",
+          "head.3.bias"
+        ]
+      },
+      "validation": {
+        "abstain_reasons": {},
+        "balanced_accuracy": 1.0,
+        "class_order": [
+          "incomplete",
+          "complete"
+        ],
+        "class_scored": [
+          10,
+          10
+        ],
+        "class_total": [
+          10,
+          10
+        ],
+        "confidence_audit": {
+          "cutoff": 0.1,
+          "false_complete_at_or_above": 0,
+          "n_at_or_above": 20,
+          "n_below": 0
+        },
+        "confusion": [
+          [
+            10,
+            0
+          ],
+          [
+            0,
+            10
+          ]
+        ],
+        "coverage": 1.0,
+        "f1_complete": 1.0,
+        "f1_macro": 1.0,
+        "n": 20,
+        "n_abstain": 0,
+        "n_scored": 20,
+        "status": "ok",
+        "unconditional_balanced_recall": 1.0
+      },
+      "version": "seriq-e02-forearm-1.0.0"
+    },
+    "B": {
+      "artifact": "B-slim-last-block.safetensors",
+      "bytes": 3180156,
+      "epoch": 20,
+      "kind": "B",
+      "manifest_sha256": "cce62bf549b541e20f22c7ff63318df239eaa96e5483a6015a1b86638645fdc8",
+      "pose_engine": "rtmpose",
+      "pose_model_sha256": "5c0a4bf67953e6d2ac43ce15e77dc9d5d354ae18430a47d2c5963a7bc5683e3c",
+      "pose_policy": "seriq-e02-forearm-2d-v1",
+      "reload": {
+        "labels_match": true,
+        "max_abs_probability_diff": 0.0,
+        "n_compared": 20
+      },
+      "seed": 602,
+      "sha256": "ebc89041f43e35743f1b4017d1900dd846722c2ae93628603ed0cfb884769dc0",
+      "slim_base_sha256": "c25c70db9ca5c1ca3715b80acbd21851fa04f4b3178e4c82f96d45492774b5bf",
+      "slim_code": "3aaab213883a1e8b06d08fcfa854da50f23889c4",
+      "slim_revision": "b934cfdbce135479b1df5abe6d1495fcee05e4f5",
+      "steps": 180,
+      "test": {
+        "abstain_reasons": {},
+        "balanced_accuracy": 1.0,
+        "class_order": [
+          "incomplete",
+          "complete"
+        ],
+        "class_scored": [
+          10,
+          10
+        ],
+        "class_total": [
+          10,
+          10
+        ],
+        "confidence_audit": {
+          "cutoff": 0.1,
+          "false_complete_at_or_above": 0,
+          "n_at_or_above": 20,
+          "n_below": 0
+        },
+        "confusion": [
+          [
+            10,
+            0
+          ],
+          [
+            0,
+            10
+          ]
+        ],
+        "coverage": 1.0,
+        "f1_complete": 1.0,
+        "f1_macro": 1.0,
+        "n": 20,
+        "n_abstain": 0,
+        "n_scored": 20,
+        "status": "ok",
+        "unconditional_balanced_recall": 1.0
+      },
+      "threshold": 0.5,
+      "train": {
+        "abstain_reasons": {
+          "incomplete_forearm_coverage": 5,
+          "insufficient_visible_forearm_pair": 1
+        },
+        "balanced_accuracy": 1.0,
+        "class_order": [
+          "incomplete",
+          "complete"
+        ],
+        "class_scored": [
+          42,
+          29
+        ],
+        "class_total": [
+          47,
+          30
+        ],
+        "confidence_audit": {
+          "cutoff": 0.1,
+          "false_complete_at_or_above": 0,
+          "n_at_or_above": 71,
+          "n_below": 0
+        },
+        "confusion": [
+          [
+            42,
+            0
+          ],
+          [
+            0,
+            29
+          ]
+        ],
+        "coverage": 0.922077922077922,
+        "f1_complete": 1.0,
+        "f1_macro": 1.0,
+        "n": 77,
+        "n_abstain": 6,
+        "n_scored": 71,
+        "status": "ok",
+        "unconditional_balanced_recall": 0.9301418439716311
+      },
+      "training": {
+        "frozen_tensors_verified": 92,
+        "hyperparameters": {
+          "batch": 8,
+          "epochs": 20,
+          "lr": 0.00015
+        },
+        "initial_tensor_sha256": "cee965d0b8e9f9e12ae9fbffcf0bbaf8417ed9ff50c7e7699915e94dbfccc384",
+        "objective": "class-balanced BCE, AdamW",
+        "parameters_total": 6369025,
+        "parameters_trainable": 794465,
+        "peak_cuda_allocated_bytes": 128356352,
+        "seconds": 2.234,
+        "selected_tensor_sha256": "6b7bd1c32f33feb6fafa66ac4c975aca7dba3ade46af4cd05219f167664ed906",
+        "steps_executed": 180,
+        "tensor": "encoder.blocks.7.attn.qkv.weight",
+        "trainable_tensors": 14,
+        "updated_tensors": [
+          "encoder.blocks.7.norm1.weight",
+          "encoder.blocks.7.norm1.bias",
+          "encoder.blocks.7.attn.qkv.weight",
+          "encoder.blocks.7.attn.qkv.bias",
+          "encoder.blocks.7.attn.proj.weight",
+          "encoder.blocks.7.attn.proj.bias",
+          "encoder.blocks.7.norm2.weight",
+          "encoder.blocks.7.norm2.bias",
+          "encoder.blocks.7.mlp.w12.weight",
+          "encoder.blocks.7.mlp.w12.bias",
+          "encoder.blocks.7.mlp.w3.weight",
+          "encoder.blocks.7.mlp.w3.bias",
+          "head.1.weight",
+          "head.1.bias"
+        ]
+      },
+      "validation": {
+        "abstain_reasons": {},
+        "balanced_accuracy": 1.0,
+        "class_order": [
+          "incomplete",
+          "complete"
+        ],
+        "class_scored": [
+          10,
+          10
+        ],
+        "class_total": [
+          10,
+          10
+        ],
+        "confidence_audit": {
+          "cutoff": 0.1,
+          "false_complete_at_or_above": 0,
+          "n_at_or_above": 20,
+          "n_below": 0
+        },
+        "confusion": [
+          [
+            10,
+            0
+          ],
+          [
+            0,
+            10
+          ]
+        ],
+        "coverage": 1.0,
+        "f1_complete": 1.0,
+        "f1_macro": 1.0,
+        "n": 20,
+        "n_abstain": 0,
+        "n_scored": 20,
+        "status": "ok",
+        "unconditional_balanced_recall": 1.0
+      },
+      "version": "seriq-e02-forearm-1.0.0"
+    }
+  },
+  "pose": {
+    "engine": "rtmpose",
+    "policy": "seriq-e02-forearm-2d-v1",
+    "sha256": "5c0a4bf67953e6d2ac43ce15e77dc9d5d354ae18430a47d2c5963a7bc5683e3c"
+  },
+  "runtime": {
+    "cuda": "12.6",
+    "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "numpy": "2.2.6",
+    "opencv": "5.1.0",
+    "python": "3.11.17",
+    "safetensors": "0.6.2",
+    "torch": "2.8.0+cu126"
+  },
+  "sealed_admission": {
+    "failures": {
+      "A": [],
+      "B": []
+    },
+    "passed": true,
+    "rules": {
+      "balanced_accuracy_min": 0.7,
+      "class_scored_min": 8,
+      "per_class_recall_min": 0.6,
+      "unconditional_balanced_recall_min": 0.65
+    }
+  },
+  "sources": {
+    "ml/api.py": "4b90240b578ad936873361c70ed41db7ce364224533a8613e981e63ec64529d2",
+    "ml/data.py": "60c3a364515a87ff971f752419401578a9ba62ce032260aa5c45434409201f80",
+    "ml/extract.py": "19788a77d4c8a9759add69269f1222dc8e1005edb75568ad56946229532b6b96",
+    "ml/models.py": "e3bf32a52f9479dbbb96705a8475e3ce10c2a803ac97ca7948f23da9ec0d6312",
+    "ml/scoring.py": "6447e36d568db91af5982853c1491bdc45d3c8475ad4f032f2493d8787ec1065",
+    "ml/train.py": "87a2e2748a6484fa7bbe3396b5ea04d83ad5af9068f84307482d9c167ea36afd"
+  },
+  "split_counts": {
+    "quarantine": 10,
+    "test": 20,
+    "train": 77,
+    "validation": 20
+  },
+  "test_pose": {
+    "by_class": {
+      "0": {
+        "n": 10,
+        "scorable": 10
+      },
+      "1": {
+        "n": 10,
+        "scorable": 10
+      }
+    },
+    "mean_joint_visibility": {
+      "11": 0.6890625,
+      "12": 1.0,
+      "13": 0.01796875,
+      "14": 1.0,
+      "15": 0.0,
+      "16": 1.0
+    },
+    "n": 20,
+    "observed_pair_frames_total": [
+      0,
+      1280
+    ],
+    "reasons": {
+      "scorable": 20
+    },
+    "scorable": 20,
+    "usable_right_frames_total": 1280
+  },
+  "test_status": "scored_once",
+  "train_track_audit": {
+    "adjacent_step_p90_per_clip": {
+      "max": 0.07095262408256531,
+      "median": 0.04313947632908821,
+      "min": 0.024535169824957848,
+      "p10": 0.03301328122615814,
+      "p90": 0.05233644768595696
+    },
+    "co_observed_left_right_slots": 2220,
+    "endpoint_span_relative_to_length": {
+      "max": 1.5244053602218628,
+      "median": 0.7627701163291931,
+      "min": 0.4279260039329529,
+      "p10": 0.5234637498855591,
+      "p90": 1.3989218473434448
+    },
+    "left_right_separation_relative_to_right_length": {
+      "max": 0.060759127140045166,
+      "median": 0.021158157847821712,
+      "min": 0.0,
+      "p10": 0.010846140049397945,
+      "p90": 0.033484935760498054
+    },
+    "n": 77,
+    "right_pair_ge_40": 76,
+    "right_pair_observed_frames": {
+      "max": 64.0,
+      "median": 64.0,
+      "min": 25.0,
+      "p10": 50.0,
+      "p90": 64.0
+    },
+    "right_projected_median_length": {
+      "max": 0.3241880238056183,
+      "median": 0.2349972426891327,
+      "min": 0.18556293845176697,
+      "p10": 0.20002850890159607,
+      "p90": 0.30806846618652345
+    },
+    "separated_above_point45_slots": 0
+  },
+  "version": "seriq-e02-forearm-1.0.0"
+}

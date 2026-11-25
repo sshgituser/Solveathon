@@ -1,0 +1,6 @@
+.gradle/
+.cxx/
+*.apk
+*.aar
+*.so
+*.tflite

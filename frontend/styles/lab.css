@@ -1,0 +1,9 @@
+/* Development page only. */
+body.lab { display: block; }
+.lab-main { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 16px; min-height: 100svh; align-items: start; }
+.lab-slot { height: 78svh; outline: 1px dashed var(--hair-strong); }
+.lab-slot--small { height: 40svh; }
+.lab--solo .lab-main { grid-template-columns: 1fr; padding: 0; }
+.lab--solo .lab-slot { height: 100svh; outline: 0; }
+.lab--solo .lab-slot--small, .lab--solo #lab-log { display: none; }
+#lab-log { grid-column: 1 / -1; margin: 0; font: 13px/1.45 Consolas, monospace; white-space: pre-wrap; }

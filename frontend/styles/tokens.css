@@ -1,0 +1,23 @@
+/* Qolda · Movement atlas. Typography and the application ship together, offline. */
+@font-face { font-family: "Source Serif 4"; src: url("../../assets/fonts/SourceSerif4.ttf") format("truetype"); font-weight: 200 900; font-display: swap; }
+@font-face { font-family: "IBM Plex Sans"; src: url("../../assets/fonts/IBMPlexSans.ttf") format("truetype"); font-weight: 100 700; font-stretch: 85% 100%; font-display: swap; }
+:root {
+  color-scheme: light;
+  --ground: #f6f7f3; --surface: #fff; --sunk: #eaf0ee;
+  --ink: #172947; --ink-2: #405269; --ink-3: #59697b;
+  --brand: #234eb5; --brand-strong: #163b94; --on-brand: #fff;
+  --plate: #dce8fe; --brand-tint: #e6edfd; --mint: #d6ede4;
+  --blueprint: #203d77; --blueprint-rule: #5773a5; --joint: #a8e4d5;
+  --rail: var(--surface); --rail-ink: var(--ink); --rail-ink-2: var(--ink-2);
+  --amber: #f6cd83; --amber-ink: #452e0d; --stop: #a3362b; --stop-tint: #fcefe9;
+  --hair: #d7dedf; --hair-strong: #8a98a5;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --t-min: .875rem; --t-small: .9375rem; --t-body: 1.0625rem; --t-lead: 1.1875rem;
+  --t-title-s: 1.5rem; --t-title-m: clamp(1.8rem, 3vw, 2.45rem); --t-title-l: clamp(2.5rem, 4.9vw, 4.65rem); --t-count: clamp(3.25rem, 7vw, 6rem);
+  --s1: 8px; --s2: 16px; --s3: 24px; --s4: 32px; --s5: 48px; --s6: 64px; --s7: 96px;
+  --r-control: 10px; --r-panel: 20px; --target: 56px;
+  --gutter: clamp(18px, 4.5vw, 76px); --measure: 1440px; --tabbar-h: 68px;
+  --ease: cubic-bezier(.22,1,.36,1); --fast: 140ms; --mid: 240ms; --stage: 1250ms;
+}

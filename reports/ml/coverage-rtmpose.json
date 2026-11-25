@@ -1,0 +1,55 @@
+{
+  "engine": "rtmpose",
+  "pose_model_sha256": "5c0a4bf67953e6d2ac43ce15e77dc9d5d354ae18430a47d2c5963a7bc5683e3c",
+  "train": {
+    "by_class": {
+      "0": {
+        "n": 47,
+        "scorable": 0
+      },
+      "1": {
+        "n": 30,
+        "scorable": 0
+      }
+    },
+    "mean_joint_visibility": {
+      "11": 0.0,
+      "12": 0.009131493506493506,
+      "13": 0.708400974025974,
+      "14": 0.9691558441558441,
+      "15": 0.48457792207792205,
+      "16": 0.9671266233766234
+    },
+    "n": 77,
+    "reasons": {
+      "insufficient_visible_arm_triplet": 8,
+      "no_visible_arm_triplet": 69
+    },
+    "scorable": 0
+  },
+  "validation": {
+    "by_class": {
+      "0": {
+        "n": 10,
+        "scorable": 0
+      },
+      "1": {
+        "n": 10,
+        "scorable": 0
+      }
+    },
+    "mean_joint_visibility": {
+      "11": 0.0,
+      "12": 0.0,
+      "13": 0.87421875,
+      "14": 1.0,
+      "15": 0.11328125,
+      "16": 0.9953125
+    },
+    "n": 20,
+    "reasons": {
+      "no_visible_arm_triplet": 20
+    },
+    "scorable": 0
+  }
+}

@@ -1,0 +1,122 @@
+/* The journal opens on a genuine calendar date, then separates period data from the all-time ledger. */
+.v-progress { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; gap: clamp(18px, 2.2vw, 32px); min-width: 0; }
+.v-progress .page-head { align-items: center; }
+.v-progress .p-print { padding-inline: var(--s2); }
+.v-progress .p-notice:empty { display: none; }
+.v-progress .p-notice { padding: 12px var(--s2); border-inline-start: 3px solid var(--brand); background: var(--mint); }
+.v-progress .p-folio { display: grid; grid-template-columns: minmax(8rem, .32fr) minmax(0, 1.68fr); overflow-wrap: anywhere; border: 1px solid var(--hair); border-radius: var(--r-panel); background: var(--plate); }
+.v-progress .p-stamp { display: grid; align-content: center; justify-items: start; gap: 3px; padding: clamp(18px, 3vw, 42px); border-inline-end: 1px solid var(--hair-strong); font-size: var(--t-small); }
+.v-progress .p-stamp-label { font-weight: 600; }
+.v-progress .p-stamp-label::first-letter { text-transform: uppercase; }
+.v-progress .p-stamp b { font: 400 clamp(3.75rem, 6.8vw, 6.5rem)/1 var(--serif); letter-spacing: -.045em; color: var(--brand); }
+.v-progress .p-folio-body { display: grid; align-content: center; justify-items: start; gap: var(--s2); min-width: 0; padding: clamp(20px, 3vw, 44px); }
+.v-progress .p-folio-body h2 { font: 400 clamp(1.75rem, 3.2vw, 3.25rem)/1.05 var(--serif); }
+.v-progress .p-folio-body > p { max-width: 52ch; color: var(--ink-2); }
+.v-progress .p-first { min-width: 0; max-width: 100%; gap: var(--s2); }
+.v-progress .p-folio-facts { display: flex; flex-wrap: wrap; gap: var(--s2) clamp(24px, 4vw, 60px); }
+.v-progress .p-folio-facts:empty { display: none; }
+.v-progress .p-folio-facts dt { font-size: var(--t-small); color: var(--ink-2); }
+.v-progress .p-folio-facts dd { font: 400 clamp(1.5rem, 2.4vw, 2.35rem)/1.22 var(--serif); }
+.v-progress .p-user-note { white-space: pre-wrap; }
+.v-progress .p-period, .v-progress .p-storage, .v-progress .p-history-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--s1) var(--s3); }
+.v-progress .p-period { padding-block-end: var(--s2); border-block-end: 1px solid var(--hair); }
+.v-progress .p-period-dates { color: var(--ink-2); font-size: var(--t-small); }
+.v-progress .p-period .seg-row span { min-height: var(--target); }
+.v-progress .p-book, .v-progress .p-pane { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s3); }
+.v-progress .p-tabs { display: flex; flex-wrap: wrap; align-items: stretch; border-bottom: 1px solid var(--hair-strong); }
+.v-progress .p-tabs button { min-height: var(--target); margin-bottom: -1px; padding: 8px clamp(12px, 2vw, 28px); border: 0; border-bottom: 3px solid transparent; background: transparent; color: var(--ink-2); font-weight: 600; }
+.v-progress .p-tabs button[aria-selected="true"] { border-bottom-color: var(--brand); color: var(--brand); }
+.v-progress .p-tabs button:focus-visible { outline-offset: -4px; }
+.v-progress .p-sheet { container-type: inline-size; display: grid; align-content: start; gap: var(--s2); min-width: 0; padding: clamp(16px, 2.5vw, 36px); background: var(--surface); border: 1px solid var(--hair); border-radius: var(--r-panel); }
+.v-progress .p-sheet h2 { font: 400 clamp(1.55rem, 2.6vw, 2.25rem)/1.12 var(--serif); }
+.v-progress .p-spread { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s3); }
+.v-progress .p-sheet .p-first, .v-progress .p-sheet .p-text-link { justify-self: start; }
+.v-progress .p-message { max-width: 58ch; color: var(--ink-2); }
+.v-progress .legend { gap: 6px var(--s2); }
+.v-progress .legend strong { margin-inline-start: 2px; color: var(--ink); }
+.v-progress .sw--incomplete { position: relative; overflow: hidden; border: 1px solid var(--ink); background: var(--surface); }
+.v-progress .sw--incomplete::after { content: ""; position: absolute; inset: -4px 3px; border-inline: 2px solid var(--ink); transform: rotate(40deg); }
+.v-progress .p-table { width: 100%; table-layout: fixed; }
+.v-progress .p-table th, .v-progress .p-table td { padding: 9px 3px; border-bottom: 1px solid var(--hair); text-align: end; overflow-wrap: anywhere; }
+.v-progress .p-table th:first-child { width: 53%; padding-inline-start: 0; text-align: start; }
+.v-progress .p-table thead th { font: 600 var(--t-min)/1.3 var(--sans); color: var(--ink-2); vertical-align: bottom; }
+.v-progress .p-table td { font: 400 1.4rem/1.2 var(--serif); }
+.v-progress .p-table .status { align-items: baseline; gap: 5px; font: 600 var(--t-small)/1.35 var(--sans); }
+.v-progress .p-table .status .ico { width: 16px; height: 16px; align-self: center; }
+.v-progress .p-table tfoot th, .v-progress .p-table tfoot td { border-bottom: 0; font-weight: 600; }
+.v-progress .p-regular { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; gap: var(--s3); }
+.v-progress .p-calendar { width: 100%; max-width: 22rem; }
+.v-progress .heat, .v-progress .p-weekdays { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; max-width: none; }
+.v-progress .p-weekdays { margin-block-end: 5px; color: var(--ink-2); text-align: center; font-size: var(--t-min); }
+.v-progress .heat .cell { position: relative; display: grid; place-items: center; min-height: 26px; aspect-ratio: 1.4; border: 1px solid var(--hair); border-radius: 4px; box-shadow: none; background: var(--ground); color: var(--ink-2); font-size: var(--t-min); }
+.v-progress .heat .cell.on { border-color: var(--brand); background: var(--plate); color: var(--ink); font-weight: 600; }
+.v-progress .heat .cell.on::after { content: ""; position: absolute; inset-inline: 24%; bottom: 1px; border-bottom: 2px solid currentColor; }
+.v-progress .heat .cell.hi { background: var(--brand); color: var(--on-brand); }
+.v-progress .heat .cell.future { border-style: dashed; background: var(--surface); opacity: 1; }
+.v-progress .heat .cell.is-today { outline-offset: 0; }
+.v-progress .kv dt::first-letter { text-transform: uppercase; }
+.v-progress .p-axis { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--s1); align-items: stretch; max-width: 52rem; }
+.v-progress .p-axis-words { display: flex; flex-direction: column; justify-content: space-between; padding-block: 4px 6%; color: var(--ink-2); font-size: var(--t-min); }
+.v-progress .p-notes li { display: grid; grid-template-columns: minmax(6.5rem, .27fr) minmax(0, 1fr); gap: var(--s2); align-items: baseline; padding: 14px 0; border-top: 1px solid var(--hair); }
+.v-progress .p-notes time, .v-progress .p-ledger time, .v-progress .p-record small { color: var(--ink-2); font-size: var(--t-small); }
+.v-progress .p-notes p { white-space: pre-wrap; overflow-wrap: anywhere; }
+.v-progress .p-day h3 { padding-block: var(--s1); font: 600 var(--t-small)/1.35 var(--sans); }
+.v-progress .p-ledger li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--s2); min-height: var(--target); padding-block: 4px; border-top: 1px solid var(--hair); }
+.v-progress .p-ledger li > .ask { grid-column: 1 / -1; }
+.v-progress .p-record { display: grid; justify-items: start; gap: 2px; overflow-wrap: anywhere; }
+.v-progress .p-ledger .icon-btn { width: var(--target); height: var(--target); }
+.v-progress .ask { display: flex; flex-wrap: wrap; gap: var(--s1); }
+.v-progress .ask > span { flex: 1 0 100%; }
+.v-progress .ask button { min-height: var(--target); }
+.v-progress .p-history-head .ask { flex-basis: 100%; }
+.v-progress .p-text-link { display: inline-flex; align-items: center; gap: var(--s1); min-height: var(--target); font-weight: 600; }
+.v-progress .p-text-link .ico { width: 18px; }
+.v-progress .p-storage { border-top: 1px solid var(--hair); color: var(--ink-2); font-size: var(--t-small); }
+.v-progress .p-print-note { display: none; }
+@media screen { .v-progress .p-pane:not(.is-active) { display: none; } }
+@media (hover: hover) { .v-progress .p-tabs button:hover { background: var(--brand-tint); } }
+/* SVG text scales with its viewBox (504, 640 or 720 units). Compensate for the actual sheet width. */
+@container (max-width: 700px) {
+  .v-progress .chart .val, .v-progress .chart .tick { font-size: 18px; }
+  .v-progress .chart[data-period="30"] .tick, .v-progress .p-axis .tick { font-size: 24px; }
+}
+@container (max-width: 440px) {
+  .v-progress .chart .val, .v-progress .chart .tick { font-size: 26px; }
+  .v-progress .chart[data-period="30"] .tick, .v-progress .p-axis .tick { font-size: 34px; }
+  .v-progress .p-regular { grid-template-columns: minmax(0, 1fr); }
+}
+@container (max-width: 310px) {
+  .v-progress .chart .val, .v-progress .chart .tick { font-size: 32px; }
+  .v-progress .chart[data-period="30"] .tick, .v-progress .p-axis .tick { font-size: 46px; }
+}
+@media (max-width: 900px) { .v-progress .p-spread { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 580px) {
+  .v-progress .p-folio { grid-template-columns: minmax(0, 1fr); }
+  .v-progress .p-stamp { display: flex; align-items: baseline; gap: 8px; padding: 14px 18px; border-inline-end: 0; border-bottom: 1px solid var(--hair-strong); }
+  .v-progress .p-stamp b { font-size: 2.45rem; }
+  .v-progress .p-stamp-label { margin-inline-end: auto; }
+  .v-progress .p-folio-body { padding: 20px 18px; }
+  .v-progress .p-first { width: 100%; padding-inline: 12px; }
+  .v-progress .p-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .v-progress .p-tabs button { padding-inline: 6px; }
+  .v-progress .p-period { align-items: start; }
+  .v-progress .p-period .seg-row span { padding-inline: 12px; }
+  .v-progress .p-storage { padding-top: var(--s2); }
+  .v-progress .p-ledger li { gap: 8px; }
+  .v-progress .p-notes li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}
+@media (max-width: 370px) {
+  .v-progress .p-period .seg, .v-progress .p-period .seg-row { width: 100%; }
+  .v-progress .p-history-head > .btn { width: 100%; }
+}
+@media print {
+  .v-progress, .v-progress .p-book, .v-progress .p-pane, .v-progress .p-spread { display: block; }
+  .v-progress .page-head, .v-progress .p-period, .v-progress .p-folio, .v-progress .p-tabs, .v-progress .p-notice, .v-progress .p-storage,
+  .v-progress .p-text-link, .v-progress .ask, .v-progress .p-screen-note, .v-progress .p-day[data-in-range="false"] { display: none; }
+  .v-progress .p-print-note { display: block; }
+  .v-progress .p-sheet { container-type: normal; margin-block: 12px; padding: 10px 0; background: transparent; border: 0; border-top: 1px solid var(--hair-strong); border-radius: 0; break-inside: avoid; }
+  .v-progress .p-history { display: block; break-inside: auto; }
+  .v-progress .p-ledger li, .v-progress .p-notes li { break-inside: avoid; }
+  .v-progress .p-day h3 { break-after: avoid; }
+  .v-progress .chart { max-width: 34rem; }
+}

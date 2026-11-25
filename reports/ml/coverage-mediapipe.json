@@ -1,0 +1,56 @@
+{
+  "engine": "mediapipe",
+  "pose_model_sha256": "59929e1d1ee95287735ddd833b19cf4ac46d29bc7afddbbf6753c459690d574a",
+  "train": {
+    "by_class": {
+      "0": {
+        "n": 47,
+        "scorable": 0
+      },
+      "1": {
+        "n": 30,
+        "scorable": 0
+      }
+    },
+    "mean_joint_visibility": {
+      "11": 0.08908279220779221,
+      "12": 0.09760551948051949,
+      "13": 0.011566558441558442,
+      "14": 0.022118506493506492,
+      "15": 0.00588474025974026,
+      "16": 0.004058441558441558
+    },
+    "n": 77,
+    "reasons": {
+      "insufficient_visible_arm_triplet": 18,
+      "no_visible_arm_triplet": 59
+    },
+    "scorable": 0
+  },
+  "validation": {
+    "by_class": {
+      "0": {
+        "n": 10,
+        "scorable": 0
+      },
+      "1": {
+        "n": 10,
+        "scorable": 0
+      }
+    },
+    "mean_joint_visibility": {
+      "11": 0.015625,
+      "12": 0.02265625,
+      "13": 0.021875,
+      "14": 0.00546875,
+      "15": 0.01796875,
+      "16": 0.0109375
+    },
+    "n": 20,
+    "reasons": {
+      "insufficient_visible_arm_triplet": 4,
+      "no_visible_arm_triplet": 16
+    },
+    "scorable": 0
+  }
+}

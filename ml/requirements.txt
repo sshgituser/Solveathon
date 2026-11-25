@@ -1,0 +1,5 @@
+numpy==2.2.6
+opencv-contrib-python==5.1.0.95
+mediapipe==0.10.32
+safetensors==0.6.2
+pytest==8.4.2

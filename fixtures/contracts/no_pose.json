@@ -1,0 +1,15 @@
+{
+  "version": "seriq.v1",
+  "model": "scratch",
+  "model_version": "contract-fixture-NOT-measured",
+  "attempts": [],
+  "counts": {
+    "total": 0,
+    "complete": 0,
+    "incomplete": 0,
+    "uncertain": 0
+  },
+  "warnings": [
+    "no_pose"
+  ]
+}

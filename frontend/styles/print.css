@@ -1,0 +1,12 @@
+/* The printed report: data only, no chrome, no 3D. */
+.report-head { display: none; }
+@media print {
+  body { display: block; padding: 0; background: #fff; }
+  .rail, #stage, #stage-overlay, .btn, .icon-btn, .notice, .head-actions, [data-stage-slot] { display: none !important; }
+  #view { padding: 0; }
+  .page-head { display: none; }
+  .report-head { display: grid; gap: 4px; margin-bottom: 16px; }
+  .panel { border-color: #999; break-inside: avoid; }
+  .cols { grid-template-columns: 1fr 1fr; }
+  .chart .col, .chart .trace { animation: none; }
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Qolda — домашний атлас разгибания локтя: инструкция, проверка одного цикла и локальный дневник занятий.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' http://127.0.0.1:* http://localhost:*; media-src 'self' blob:; img-src 'self' data: blob:; style-src 'self'; font-src 'self'; script-src 'self'">
+<!-- Delivery profile, set by the shell that serves the client. See src/platform/profile.js. -->
+<meta name="seriq-profile" content="local">
+<meta name="theme-color" content="#F6F7F3">
+<title>Qolda</title>
+<link rel="icon" href="../assets/brand/qolda-mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/components.css">
+<link rel="stylesheet" href="styles/shell.css">
+<link rel="stylesheet" href="styles/atlas.css">
+<link rel="stylesheet" href="styles/views/welcome.css">
+<link rel="stylesheet" href="styles/views/home.css">
+<link rel="stylesheet" href="styles/views/check.css">
+<link rel="stylesheet" href="styles/views/progress.css">
+<link rel="stylesheet" href="styles/views/guide.css">
+<link rel="stylesheet" href="styles/views/cabinet.css">
+<link rel="stylesheet" href="styles/views/settings.css">
+<link rel="stylesheet" href="styles/print.css">
+</head>
+<body>
+<header class="rail" id="rail"></header>
+<main id="view" tabindex="-1"></main>
+<!-- The 3D stage: one canvas for the whole app and a layer for joint labels. See src/stage/. -->
+<canvas id="stage" aria-hidden="true"></canvas>
+<svg id="stage-overlay" aria-hidden="true"></svg>
+<noscript>Для работы Qolda включите JavaScript. / Qolda үшін JavaScript қосыңыз.</noscript>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

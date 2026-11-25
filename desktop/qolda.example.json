@@ -1,0 +1,11 @@
+{
+  "attachOnly": false,
+  "backendRoot": "../engine-win64/app",
+  "python": "../engine-win64/python/python.exe",
+  "bundle": "../engine-win64/runtime/bundle.json",
+  "artifacts": "../engine-win64/runtime",
+  "poseModel": "../engine-win64/runtime/end2end.onnx",
+  "ffprobe": "../engine-win64/runtime/ffprobe.exe",
+  "scratch": "%LOCALAPPDATA%/Qolda/scratch",
+  "dllDir": null
+}

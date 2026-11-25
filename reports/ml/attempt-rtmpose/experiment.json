@@ -1,0 +1,51 @@
+{
+  "fit_abstain_reasons": {
+    "train": {
+      "insufficient_visible_arm_triplet": 8,
+      "no_visible_arm_triplet": 69
+    },
+    "validation": {
+      "no_visible_arm_triplet": 20
+    }
+  },
+  "fit_denominators": {
+    "train": 77,
+    "validation": 20
+  },
+  "fit_scorable_by_class": {
+    "train": {},
+    "validation": {}
+  },
+  "fit_status": "blocked_pose_coverage",
+  "manifest_sha256": "cce62bf549b541e20f22c7ff63318df239eaa96e5483a6015a1b86638645fdc8",
+  "models": {},
+  "pose": {
+    "engine": "rtmpose",
+    "sha256": "5c0a4bf67953e6d2ac43ce15e77dc9d5d354ae18430a47d2c5963a7bc5683e3c"
+  },
+  "runtime": {
+    "cuda": "12.6",
+    "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "numpy": "2.2.6",
+    "opencv": "5.1.0",
+    "python": "3.11.17",
+    "safetensors": "0.6.2",
+    "torch": "2.8.0+cu126"
+  },
+  "sources": {
+    "ml/api.py": "538e1d862cb2371f357119ba7b7eb28915898b94230b85754861d06d580abb50",
+    "ml/data.py": "a4e3dc3f5ac057f3a6551c7a8f98032b72bd53f865d57446840cb4f989432863",
+    "ml/extract.py": "aafc8d49e1fca0bae3b0d91e0e9f6e2ef3e9afc87548b18d4b6803d0e3c1c6bc",
+    "ml/models.py": "2a029d016919f2b450e6d4d5e351012f65e36f28d23c9d700664242fb02f1413",
+    "ml/scoring.py": "6447e36d568db91af5982853c1491bdc45d3c8475ad4f032f2493d8787ec1065",
+    "ml/train.py": "52207061de432123d65b1fafa4ec87833ad6023020db92973464f1dbdd45a3ba"
+  },
+  "split_counts": {
+    "quarantine": 10,
+    "test": 20,
+    "train": 77,
+    "validation": 20
+  },
+  "test_status": "not_opened",
+  "version": "seriq-e02-1.0.0"
+}

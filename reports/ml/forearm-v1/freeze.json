@@ -1,0 +1,60 @@
+{
+  "artifacts": {
+    "A": {
+      "sha256": "b6ea8019a2d18cb02e61e55671d6e76a8b12b85ab65ce2e1324abca59fcf832f",
+      "threshold": 0.5
+    },
+    "B": {
+      "sha256": "ebc89041f43e35743f1b4017d1900dd846722c2ae93628603ed0cfb884769dc0",
+      "threshold": 0.5
+    }
+  },
+  "development_provenance": {
+    "all_native_frames_at_least_64": true,
+    "cache_sha256": "0a743997fb5ec8a1209d0fb0c143144d539ff75c104fcacb803a28c6b51ef409",
+    "n_verified": 97
+  },
+  "manifest_sha256": "cce62bf549b541e20f22c7ff63318df239eaa96e5483a6015a1b86638645fdc8",
+  "pose": {
+    "engine": "rtmpose",
+    "policy": "seriq-e02-forearm-2d-v1",
+    "sha256": "5c0a4bf67953e6d2ac43ce15e77dc9d5d354ae18430a47d2c5963a7bc5683e3c"
+  },
+  "runtime": {
+    "cuda": "12.6",
+    "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "numpy": "2.2.6",
+    "opencv": "5.1.0",
+    "python": "3.11.17",
+    "safetensors": "0.6.2",
+    "torch": "2.8.0+cu126"
+  },
+  "sealed_admission": {
+    "failures": {
+      "A": [],
+      "B": []
+    },
+    "passed": true,
+    "rules": {
+      "balanced_accuracy_min": 0.7,
+      "class_scored_min": 8,
+      "per_class_recall_min": 0.6,
+      "unconditional_balanced_recall_min": 0.65
+    }
+  },
+  "sources": {
+    "ml/api.py": "4b90240b578ad936873361c70ed41db7ce364224533a8613e981e63ec64529d2",
+    "ml/data.py": "60c3a364515a87ff971f752419401578a9ba62ce032260aa5c45434409201f80",
+    "ml/extract.py": "19788a77d4c8a9759add69269f1222dc8e1005edb75568ad56946229532b6b96",
+    "ml/models.py": "e3bf32a52f9479dbbb96705a8475e3ce10c2a803ac97ca7948f23da9ec0d6312",
+    "ml/scoring.py": "6447e36d568db91af5982853c1491bdc45d3c8475ad4f032f2493d8787ec1065",
+    "ml/train.py": "87a2e2748a6484fa7bbe3396b5ea04d83ad5af9068f84307482d9c167ea36afd"
+  },
+  "split_counts": {
+    "quarantine": 10,
+    "test": 20,
+    "train": 77,
+    "validation": 20
+  },
+  "version": "seriq-e02-forearm-1.0.0"
+}

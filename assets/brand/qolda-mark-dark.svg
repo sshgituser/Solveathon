@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Qolda">
+  <!-- The mark on the dark rail colour. -->
+  <path d="M12 22V33A20 20 0 0 0 52 33V22" fill="none" stroke="#E9F1F3" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="32" cy="26" r="8.5" fill="#2FB5CB"/>
+</svg>

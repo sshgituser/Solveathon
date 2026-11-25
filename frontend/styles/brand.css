@@ -1,0 +1,15 @@
+/* Development page: brand sheet. */
+@font-face { font-family: "Source Serif 4"; src: url("../../assets/fonts/SourceSerif4.ttf") format("truetype"); font-weight: 200 900; }
+.brand-sheet main { display: grid; gap: var(--s4); padding: var(--s4); }
+.brand-sheet .concept { display: grid; gap: var(--s1); }
+.brand-sheet h2 { font-size: var(--t-title-s); }
+.brand-sheet .row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3); }
+.brand-sheet .big { width: 160px; height: 160px; border-radius: 16px; padding: 16px; }
+.brand-sheet .light { background: #fff; border: 1px solid var(--hair); }
+.brand-sheet .dark { background: var(--rail); }
+.brand-sheet .sizes { display: flex; align-items: center; gap: var(--s2); padding: 12px; background: #fff; border: 1px solid var(--hair); border-radius: 12px; }
+.brand-sheet .s32 { width: 32px; height: 32px; }
+.brand-sheet .s16 { width: 16px; height: 16px; }
+.brand-sheet .live { display: block; width: 240px; height: 240px; border-radius: 16px; }
+.brand-sheet .live.small { width: 56px; height: 56px; }
+.brand-sheet .live .logo3d { display: block; width: 100%; height: 100%; }

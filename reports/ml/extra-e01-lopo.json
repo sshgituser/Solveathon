@@ -1,0 +1,308 @@
+{
+  "device": "NVIDIA GeForce RTX 5060 Ti",
+  "fold_weights_exported": false,
+  "folds": [
+    {
+      "baseline": {
+        "all_with_abstention_penalty": {
+          "ba": 0.5,
+          "f1_complete": 0.0
+        },
+        "confusion_0_1_reject": [
+          [
+            10,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            7
+          ]
+        ],
+        "coverage": 0.65,
+        "decided": 13,
+        "decided_only": {
+          "ba": 0.5,
+          "f1_complete": 0.0
+        },
+        "rejected": 7
+      },
+      "fit_n": 62,
+      "fold": 1,
+      "head_cuda_ops": 24,
+      "held_n": 20,
+      "steps": 144,
+      "tcn": {
+        "all_with_abstention_penalty": {
+          "ba": 0.65,
+          "f1_complete": 0.46153846153846156
+        },
+        "confusion_0_1_reject": [
+          [
+            10,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            7
+          ]
+        ],
+        "coverage": 0.65,
+        "decided": 13,
+        "decided_only": {
+          "ba": 1.0,
+          "f1_complete": 1.0
+        },
+        "rejected": 7
+      }
+    },
+    {
+      "baseline": {
+        "all_with_abstention_penalty": {
+          "ba": 0.825,
+          "f1_complete": 0.8181818181818182
+        },
+        "confusion_0_1_reject": [
+          [
+            9,
+            3,
+            0
+          ],
+          [
+            1,
+            9,
+            0
+          ]
+        ],
+        "coverage": 1.0,
+        "decided": 22,
+        "decided_only": {
+          "ba": 0.825,
+          "f1_complete": 0.8181818181818182
+        },
+        "rejected": 0
+      },
+      "fit_n": 60,
+      "fold": 2,
+      "head_cuda_ops": 24,
+      "held_n": 22,
+      "steps": 144,
+      "tcn": {
+        "all_with_abstention_penalty": {
+          "ba": 0.875,
+          "f1_complete": 0.9090909090909091
+        },
+        "confusion_0_1_reject": [
+          [
+            9,
+            2,
+            1
+          ],
+          [
+            0,
+            10,
+            0
+          ]
+        ],
+        "coverage": 0.9545454545454546,
+        "decided": 21,
+        "decided_only": {
+          "ba": 0.9090909090909092,
+          "f1_complete": 0.9090909090909091
+        },
+        "rejected": 1
+      }
+    },
+    {
+      "baseline": {
+        "all_with_abstention_penalty": {
+          "ba": 0.6193181818181819,
+          "f1_complete": 0.5333333333333333
+        },
+        "confusion_0_1_reject": [
+          [
+            7,
+            0,
+            1
+          ],
+          [
+            7,
+            4,
+            0
+          ]
+        ],
+        "coverage": 0.9473684210526315,
+        "decided": 18,
+        "decided_only": {
+          "ba": 0.6818181818181819,
+          "f1_complete": 0.5333333333333333
+        },
+        "rejected": 1
+      },
+      "fit_n": 63,
+      "fold": 3,
+      "head_cuda_ops": 24,
+      "held_n": 19,
+      "steps": 144,
+      "tcn": {
+        "all_with_abstention_penalty": {
+          "ba": 0.7102272727272727,
+          "f1_complete": 0.7058823529411765
+        },
+        "confusion_0_1_reject": [
+          [
+            7,
+            0,
+            1
+          ],
+          [
+            5,
+            6,
+            0
+          ]
+        ],
+        "coverage": 0.9473684210526315,
+        "decided": 18,
+        "decided_only": {
+          "ba": 0.7727272727272727,
+          "f1_complete": 0.7058823529411765
+        },
+        "rejected": 1
+      }
+    },
+    {
+      "baseline": {
+        "all_with_abstention_penalty": {
+          "ba": 0.8545454545454545,
+          "f1_complete": 0.8695652173913043
+        },
+        "confusion_0_1_reject": [
+          [
+            8,
+            2,
+            0
+          ],
+          [
+            1,
+            10,
+            0
+          ]
+        ],
+        "coverage": 1.0,
+        "decided": 21,
+        "decided_only": {
+          "ba": 0.8545454545454545,
+          "f1_complete": 0.8695652173913043
+        },
+        "rejected": 0
+      },
+      "fit_n": 61,
+      "fold": 4,
+      "head_cuda_ops": 24,
+      "held_n": 21,
+      "steps": 144,
+      "tcn": {
+        "all_with_abstention_penalty": {
+          "ba": 1.0,
+          "f1_complete": 1.0
+        },
+        "confusion_0_1_reject": [
+          [
+            10,
+            0,
+            0
+          ],
+          [
+            0,
+            11,
+            0
+          ]
+        ],
+        "coverage": 1.0,
+        "decided": 21,
+        "decided_only": {
+          "ba": 1.0,
+          "f1_complete": 1.0
+        },
+        "rejected": 0
+      }
+    }
+  ],
+  "manifest_sha256": "287285d9386f26f7d147a9821fdd46b38f32673f801ea7c7df336ddefe7015eb",
+  "participant_macro_ba_with_rejects": {
+    "baseline": 0.6997159090909091,
+    "tcn": 0.8088068181818182
+  },
+  "pooled": {
+    "baseline": {
+      "all_with_abstention_penalty": {
+        "ba": 0.6988095238095238,
+        "f1_complete": 0.6571428571428571
+      },
+      "confusion_0_1_reject": [
+        [
+          34,
+          5,
+          1
+        ],
+        [
+          12,
+          23,
+          7
+        ]
+      ],
+      "coverage": 0.9024390243902439,
+      "decided": 74,
+      "decided_only": {
+        "ba": 0.7644688644688644,
+        "f1_complete": 0.7301587301587301
+      },
+      "rejected": 8
+    },
+    "tcn": {
+      "all_with_abstention_penalty": {
+        "ba": 0.8071428571428572,
+        "f1_complete": 0.8108108108108109
+      },
+      "confusion_0_1_reject": [
+        [
+          36,
+          2,
+          2
+        ],
+        [
+          5,
+          30,
+          7
+        ]
+      ],
+      "coverage": 0.8902439024390244,
+      "decided": 73,
+      "decided_only": {
+        "ba": 0.9022556390977443,
+        "f1_complete": 0.8955223880597015
+      },
+      "rejected": 9
+    }
+  },
+  "pose_profile": {
+    "by_provider": {
+      "CUDAExecutionProvider": 182
+    },
+    "cpu_node_events": 0,
+    "real_frame": true
+  },
+  "pose_sha256": "2e0a9c0c5287bfa8897440975c32e98e26be90e88ad9ddd9e72fba8644b68b78",
+  "recipe": {
+    "confidence_floor": 0.6,
+    "epochs": 36,
+    "seed": 601,
+    "version": "seriq-e01-pose-proxy-1.1.0"
+  },
+  "schema": "qolda-e01-train-lopo-v1",
+  "source_sha256": "592963d86c9b54b7246bd716374aa17faffa116d21c27d4bf024b3a466d5a475",
+  "validation_media_read": false
+}

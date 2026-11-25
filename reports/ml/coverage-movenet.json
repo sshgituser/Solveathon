@@ -1,0 +1,55 @@
+{
+  "engine": "movenet",
+  "pose_model_sha256": "0491b130b2dd622d71a180936e957212341daca78e9f6a04e0d9c2045eff2ecb",
+  "train": {
+    "by_class": {
+      "0": {
+        "n": 47,
+        "scorable": 0
+      },
+      "1": {
+        "n": 30,
+        "scorable": 0
+      }
+    },
+    "mean_joint_visibility": {
+      "11": 0.0006087662337662338,
+      "12": 0.0010146103896103895,
+      "13": 0.02333603896103896,
+      "14": 0.014204545454545454,
+      "15": 0.08340097402597403,
+      "16": 0.33319805194805197
+    },
+    "n": 77,
+    "reasons": {
+      "insufficient_visible_arm_triplet": 1,
+      "no_visible_arm_triplet": 76
+    },
+    "scorable": 0
+  },
+  "validation": {
+    "by_class": {
+      "0": {
+        "n": 10,
+        "scorable": 0
+      },
+      "1": {
+        "n": 10,
+        "scorable": 0
+      }
+    },
+    "mean_joint_visibility": {
+      "11": 0.0,
+      "12": 0.0,
+      "13": 0.37421875,
+      "14": 0.11015625,
+      "15": 0.1484375,
+      "16": 0.340625
+    },
+    "n": 20,
+    "reasons": {
+      "no_visible_arm_triplet": 20
+    },
+    "scorable": 0
+  }
+}

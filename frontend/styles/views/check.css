@@ -1,0 +1,214 @@
+/* Check / E02: a camera-position plate, a short field note, then one action. */
+.v-check { --check-gap: clamp(1rem, 2.6vw, 2.25rem); --check-pad: clamp(1rem, 2.8vw, 2.25rem); display: grid; gap: var(--check-gap); width: 100%; max-width: 76rem; min-width: 0; margin-inline: auto; align-content: start; overflow-wrap: anywhere; }
+.v-check :is(.c-mast, .c-route, .c-panel, .c-work, .c-form, .c-visual, .c-file, .c-plate-wrap, .c-result-copy, .c-result-figure, .c-instruction-layout, .c-result-layout, .c-card-end) { min-width: 0; }
+.v-check .c-mast { display: flex; align-items: end; justify-content: space-between; gap: var(--s2) var(--s3); flex-wrap: wrap; }
+.v-check .c-mast > div { min-width: 0; }
+.v-check .c-sheet, .v-check .c-page-step { font: 600 var(--t-min)/1.35 var(--sans); color: var(--brand); }
+.v-check .c-sheet { display: flex; align-items: center; gap: .65em; }
+.v-check .c-sheet::before { content: ""; width: 1.8em; border-top: 2px solid currentColor; }
+.v-check .c-mast h1 { margin-block: .18em .12em; font: 450 clamp(2.4rem, 4.5vw, 4.2rem)/1.04 var(--serif); letter-spacing: -.04em; }
+.v-check .c-subtitle { color: var(--ink-2); }
+.v-check .c-exercise { display: inline-flex; align-items: center; gap: .55em; padding: .45em .8em; border-radius: var(--r-control); background: var(--mint, #D6EDE4); color: var(--ink); font-size: var(--t-small); font-weight: 600; }
+.v-check .c-exercise .ico { width: 1.3em; height: 1.3em; }
+
+/* The index remains reachable even before a clip is selected. Only the current step has a bar. */
+.v-check .c-route { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--s2); padding-block: .45rem; border-block: 1px solid var(--hair); }
+.v-check .c-page-step { padding-inline-end: var(--s2); border-inline-end: 1px solid var(--hair-strong); color: var(--ink-2); }
+.v-check .c-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .35rem; }
+.v-check .c-steps li { min-width: 0; }
+.v-check .c-steps button { width: 100%; min-width: 0; display: flex; align-items: center; justify-content: center; gap: .5rem; min-height: max(44px, var(--target)); padding: .35rem .25rem; border: 0; border-bottom: 3px solid transparent; border-radius: .45rem .45rem 0 0; background: transparent; color: var(--ink-2); font: 500 var(--t-small)/1.25 var(--sans); touch-action: manipulation; }
+.v-check .c-steps .n { flex: none; font: 600 var(--t-min)/1.4 var(--sans); color: var(--ink-2); }
+.v-check .c-steps button.done .n { text-decoration: underline; text-underline-offset: .24em; }
+.v-check .c-steps button[aria-current="step"] { color: var(--brand); background: var(--plate, #DCE8FE); border-bottom-color: var(--brand); font-weight: 600; }
+.v-check .c-steps button[aria-current="step"] .n { color: inherit; }
+.v-check .c-panel { display: grid; gap: var(--s2); align-content: start; }
+.v-check .c-panel-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .6rem var(--s2); }
+.v-check .c-panel-head h2 { font: 460 clamp(1.7rem, 2.6vw, 2.4rem)/1.12 var(--serif); letter-spacing: -.026em; outline: none; box-shadow: none; scroll-margin-block: var(--s2); }
+.v-check .btn { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
+.v-check .btn--cta { width: fit-content; min-width: 0; min-height: max(48px, var(--target)); padding: .7em clamp(1rem, 2.2vw, 1.75rem); font: 600 var(--t-body)/1.25 var(--sans); }
+.v-check .btn--cta .ico { width: 1.2em; height: 1.2em; }
+.v-check .c-card-end { display: grid; justify-items: start; align-content: end; gap: .5rem; }
+.v-check .c-text-action { display: inline-flex; width: fit-content; max-width: 100%; align-items: center; min-height: 44px; padding: .35rem .15rem; border: 0; border-radius: .2rem; background: none; color: var(--brand); font: 600 var(--t-small)/1.35 var(--sans); text-align: start; text-decoration: underline; text-underline-offset: .2em; }
+
+.v-check .c-step-line { display: flex; align-items: center; gap: .85rem; min-width: 0; }
+.v-check .c-back { display: inline-flex; align-items: center; gap: .35rem; flex: none; min-height: 44px; padding: .25rem .3rem; background: none; border: 0; border-radius: .35rem; color: var(--brand); font: 600 var(--t-small)/1.2 var(--sans); }
+.v-check .c-back .ico { width: 1.2em; height: 1.2em; transform: rotate(180deg); }
+
+/* The blue plate is the explanatory drawing, never a pretend camera feed. */
+.v-check .c-instruction-layout { display: grid; grid-template-columns: minmax(0, 1.17fr) minmax(0, .9fr); gap: var(--check-gap); align-items: start; }
+.v-check .c-plate-wrap { display: grid; align-content: start; }
+.v-check .c-instr { display: grid; margin: 0; border: 1px solid var(--hair-strong); border-radius: var(--r-panel); background: var(--surface); }
+.v-check .c-instr-frame { position: relative; border-radius: var(--r-panel) var(--r-panel) 0 0; background-color: var(--plate, #DCE8FE); border-bottom: 1px solid var(--hair); }
+.v-check .c-instr-frame::before, .v-check .c-instr-frame::after { content: ""; position: absolute; width: .8rem; height: .8rem; opacity: .65; pointer-events: none; }
+.v-check .c-instr-frame::before { top: .8rem; right: .8rem; border-block-start: 2px solid var(--brand); border-inline-end: 2px solid var(--brand); }
+.v-check .c-instr-frame::after { bottom: .8rem; left: .8rem; border-block-end: 2px solid var(--brand); border-inline-start: 2px solid var(--brand); }
+.v-check .i-svg { display: block; width: 100%; height: auto; max-height: 19rem; }
+.v-check .c-plate-key, .v-check .c-plate-label { position: absolute; max-width: 70%; color: var(--brand); font: 600 var(--t-min)/1.2 var(--sans); }
+.v-check .c-plate-key { left: .8rem; top: .7rem; }
+.v-check .c-plate-label { right: .8rem; bottom: .6rem; }
+.v-check .c-instr figcaption { display: grid; gap: .65rem; padding: var(--s2) clamp(1rem, 2vw, 1.5rem); }
+.v-check .c-instr-head { display: grid; gap: .2rem; }
+.v-check .c-instr-head strong { font: 600 var(--t-lead)/1.2 var(--sans); }
+.v-check .c-instr-head .fine, .v-check .c-instr figcaption > .fine { line-height: 1.4; }
+.v-check .c-instr-caption { color: var(--ink); font-size: var(--t-small); }
+.v-check .c-instr-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem var(--s2); }
+.v-check .i-bars { display: flex; gap: 4px; flex: 1 1 3rem; max-width: 6rem; }
+.v-check .i-bars span { flex: 1; height: 5px; background: var(--sunk); border: 1px solid var(--hair); }
+.v-check .i-bars span.on { background: var(--brand); border-color: var(--brand); }
+.v-check .c-fieldnotes { display: grid; gap: var(--s2); align-content: start; }
+.v-check .c-fieldnotes h3, .v-check .c-memo h3 { font: 600 var(--t-lead)/1.3 var(--sans); }
+.v-check .c-howto { counter-reset: how; display: grid; border-top: 1px solid var(--hair); }
+.v-check .c-howto li { counter-increment: how; display: grid; grid-template-columns: 2.1em minmax(0, 1fr); column-gap: .6rem; row-gap: .1rem; align-items: baseline; padding: clamp(.6rem, 1vw, .9rem) 0; border-bottom: 1px solid var(--hair); }
+.v-check .c-howto li::before { grid-row: span 2; content: counter(how, decimal-leading-zero); color: var(--brand); font: 450 1.4rem/1 var(--serif); }
+.v-check .c-howto li strong { font-weight: 600; }
+.v-check .c-howto li span { grid-column: 2; color: var(--ink-2); font-size: var(--t-small); }
+.v-check .c-limit { font-size: var(--t-small); font-weight: 600; color: var(--ink-2); }
+
+/* One original vector player: ink for body and tripod, cobalt for the working arm. */
+.v-check .i-floor { fill: none; stroke: var(--hair-strong); stroke-width: 2; stroke-linecap: round; }
+.v-check .i-chair rect, .v-check .i-chair path { fill: none; stroke: var(--ink-2); stroke-width: 7; stroke-linecap: round; }
+.v-check .i-camera rect { fill: var(--surface); stroke: var(--ink); stroke-width: 4; }
+.v-check .i-camera circle { fill: var(--brand); }
+.v-check .i-camera path { fill: none; stroke: var(--ink-2); stroke-width: 4; stroke-linecap: round; }
+.v-check .i-head { fill: var(--surface); stroke: var(--ink-2); stroke-width: 5; }
+.v-check .i-neck, .v-check .i-torso, .v-check .i-thigh, .v-check .i-shin, .v-check .i-foot { fill: none; stroke: var(--ink-2); stroke-linecap: round; }
+.v-check .i-neck { stroke-width: 10; } .v-check .i-torso { stroke-width: 32; } .v-check .i-thigh { stroke-width: 24; } .v-check .i-shin { stroke-width: 16; } .v-check .i-foot { stroke-width: 9; }
+.v-check .i-upper { fill: none; stroke: var(--ink); stroke-width: 14; stroke-linecap: round; }
+.v-check .i-fore { fill: none; stroke: var(--brand); stroke-width: 12; stroke-linecap: round; }
+.v-check .i-hand, .v-check .i-joint, .v-check .i-clock circle { fill: var(--surface); stroke: var(--brand); stroke-width: 4; }
+.v-check .i-hand { stroke-width: 5; }
+.v-check .i-joint, .v-check .i-arc, .v-check .i-clock, .v-check .i-frame, .v-check .i-sight { opacity: 0; }
+.v-check .i-frame, .v-check .i-sight, .v-check .i-arc, .v-check .i-clock path { fill: none; stroke: var(--brand); stroke-width: 3; stroke-linecap: round; }
+.v-check .i-frame { stroke-dasharray: 9 9; } .v-check .i-sight { stroke-dasharray: 4 8; stroke-width: 2; } .v-check .i-arc { stroke-dasharray: 7 7; }
+.v-check .i-svg[data-scene="setup"] .i-sight, .v-check .i-svg:not([data-scene="setup"]) :is(.i-frame, .i-joint), .v-check .i-svg[data-scene="move"] .i-arc, .v-check .i-svg[data-scene="limit"] .i-clock { opacity: 1; }
+
+/* The model is opt-in on the instruction and never fills the video/permission steps. */
+.v-check .c-figure { padding: .6rem; border: 1px solid var(--hair); border-radius: var(--r-panel); background: var(--plate, #DCE8FE); }
+.v-check .c-figure [data-stage-slot] { min-height: clamp(13rem, 23vw, 21rem); }
+.v-check .c-figure .fig-bar, .v-check .c-figure .fig-tools { flex-wrap: wrap; }
+.v-check .c-figure .fig-tools { justify-content: start; margin: 0; }
+.v-check .c-figure .fig-range { width: clamp(4.5rem, 9vw, 8rem); }
+.v-check .c-figure .fig-tools > .btn { font-size: var(--t-small); }
+.v-check .c-figure .figure-foot { display: block; min-height: 0; padding: .35rem; }
+.v-check .c-figure .figure-foot .fine { margin: 0; text-align: start; }
+/* The stage already tracks scroll. Keep this particular in-page reference visible while it is in use. */
+body.scrolled:has(.v-check .c-figure:not([hidden]) .stage-fallback[hidden]) :is(#stage, #stage-overlay) { opacity: 1 !important; }
+
+.v-check .c-work, .v-check .c-result-layout { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, .85fr); align-items: start; gap: var(--check-gap); }
+.v-check .c-form, .v-check .c-result-copy { display: grid; align-content: start; gap: var(--s2); padding: var(--check-pad); border: 1px solid var(--hair); border-radius: var(--r-panel); background: var(--surface); }
+.v-check .c-lead { max-width: 40em; color: var(--ink-2); }
+.v-check .c-memo { display: grid; gap: var(--s2); min-width: 0; padding: var(--s2); border-top: 3px solid var(--brand); border-radius: 0 0 var(--r-control) var(--r-control); background: var(--plate, #DCE8FE); }
+.v-check .c-memo dl, .v-check .c-live-facts { display: grid; gap: .65rem; }
+.v-check .c-memo dl > div, .v-check .c-live-facts > div { min-width: 0; }
+.v-check .c-memo dt, .v-check .c-live-facts dt { font-size: var(--t-min); color: var(--ink-2); }
+.v-check .c-memo dd, .v-check .c-live-facts dd { font-weight: 600; }
+.v-check .seg { width: 100%; }
+.v-check .seg-row { max-width: 100%; }
+.v-check .seg-row span { white-space: normal; padding: .5rem .75rem; text-align: center; font-size: var(--t-small); }
+.v-check .c-file, .v-check .c-live, .v-check .c-disclosure-body { display: grid; min-width: 0; gap: var(--s2); }
+.v-check .c-drop { display: grid; justify-items: center; gap: .4rem; padding: clamp(1rem, 3vw, 2.7rem) var(--s2); border: 2px dashed var(--hair-strong); border-radius: var(--r-control); background: var(--ground); text-align: center; cursor: pointer; }
+.v-check .c-drop .ico { width: 2rem; height: 2rem; color: var(--brand); }
+.v-check .c-drop strong { color: var(--brand); font: 600 var(--t-lead)/1.3 var(--sans); }
+.v-check .c-drop span, .v-check .c-file-status { font-size: var(--t-small); color: var(--ink-2); }
+.v-check .c-drop.over { border-color: var(--brand); background: var(--plate, #DCE8FE); }
+.v-check .c-drop.has-file { grid-template-columns: auto minmax(0, 1fr); align-items: center; justify-items: start; padding: .85rem; text-align: start; }
+.v-check .c-drop.has-file span, .v-check .c-file-status:empty { display: none; }
+.v-check #clip:focus-visible + .c-drop { outline: 3px solid var(--brand); outline-offset: 3px; }
+.v-check video { width: 100%; max-height: 20rem; border-radius: var(--r-control); background: var(--ink); }
+.v-check .c-camera { position: relative; }
+.v-check .c-countdown { position: absolute; left: .5rem; bottom: .5rem; max-width: calc(100% - 1rem); padding: .25rem .55rem; background: var(--ink); color: #fff; font-size: var(--t-small); font-weight: 600; }
+.v-check .c-countdown:empty { display: none; }
+.v-check .c-disclosure { min-width: 0; padding-block: .2rem; border-block: 1px solid var(--hair); }
+.v-check summary { min-height: 44px; padding: .55rem 0; color: var(--ink); font-weight: 600; cursor: pointer; }
+.v-check summary::marker { color: var(--brand); }
+.v-check summary > span { margin-inline-start: .6em; color: var(--brand); }
+.v-check .c-disclosure-body { padding-block: .5rem var(--s2); }
+.v-check .consent { align-items: start; grid-template-columns: 1.45rem minmax(0, 1fr); gap: .7rem; max-width: none; }
+.v-check .consent input { width: 1.4rem; height: 1.4rem; margin-top: .15rem; }
+.v-check .c-agreement { padding: 1rem; background: var(--ground); border: 1px solid var(--hair-strong); border-radius: var(--r-control); }
+.v-check .c-agreement:has(:checked) { border-color: var(--brand); background: var(--plate, #DCE8FE); }
+.v-check .c-live-info { display: flex; align-items: start; gap: .75rem; padding: var(--s2); border-inline-start: 3px solid var(--brand); background: var(--plate, #DCE8FE); }
+.v-check .c-live-message { color: var(--ink); font-weight: 600; }
+.v-check .c-live-facts { grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); padding: var(--s2); border: 1px solid var(--hair); border-radius: var(--r-control); }
+
+/* Each verdict starts with a named shape. Amber means uncertain; a service error is not a health warning. */
+.v-check .c-result-layout:not(:has(.c-result-figure:not([hidden]))) { grid-template-columns: minmax(0, 48rem); }
+.v-check .c-verdict { display: grid; gap: .75rem; padding-block-end: var(--s2); border-bottom: 1px solid var(--hair); }
+.v-check .c-title { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: start; gap: .7rem; font: 450 clamp(1.5rem, 3vw, 2.5rem)/1.14 var(--serif); letter-spacing: -.02em; }
+.v-check .c-title .ico { width: 1em; height: 1em; margin-top: .08em; }
+.v-check [data-state="complete"] .c-title { color: var(--brand); }
+.v-check [data-state="uncertain"] .c-title .ico { border-radius: 50%; color: var(--amber-ink); background: var(--amber); }
+.v-check .c-note { font-size: var(--t-small); color: var(--ink-2); }
+.v-check .c-next { font-weight: 600; }
+
+@media (max-width: 1120px) {
+  .v-check .c-route { grid-template-columns: minmax(0, 1fr); gap: .15rem; }
+  .v-check .c-page-step { border: 0; }
+}
+@media (max-width: 800px) {
+  .v-check .c-instruction-layout, .v-check .c-work, .v-check .c-result-layout { grid-template-columns: minmax(0, 1fr); }
+  .v-check .c-form, .v-check .c-result-copy { padding: clamp(1rem, 4vw, 1.5rem); }
+  .v-check .c-memo dl { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+  .v-check .c-instr-head { grid-template-columns: auto 1fr; align-items: baseline; column-gap: 1rem; }
+  .v-check .c-instr-head .fine { text-align: end; }
+}
+@media (max-width: 560px) {
+  .v-check .c-mast { gap: .65rem; }
+  .v-check .c-exercise { padding: .25em .55em; }
+  .v-check .c-steps { gap: .2rem; }
+  .v-check .c-steps button { flex-direction: column; justify-content: start; gap: .12rem; padding: .35rem .1rem; font-size: var(--t-min); }
+  .v-check .c-steps .n { line-height: 1.2; }
+  .v-check .c-instr-head { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .v-check .c-instr-head .fine { text-align: start; }
+  .v-check .c-card-end, .v-check .c-card-end .btn, .v-check .actions .btn { width: 100%; }
+  .v-check .c-howto li { grid-template-columns: 2em minmax(0, 1fr); }
+  .v-check .c-memo dl { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 360px) {
+  .v-check .c-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .v-check .c-steps button { flex-direction: row; justify-content: start; align-items: center; gap: .4rem; padding-inline: .4rem; }
+  .v-check .c-instr-row { display: grid; justify-content: stretch; }
+  .v-check .i-bars { width: 5rem; }
+}
+
+/* Packaged Android: a pocket exercise sheet, not a scaled desktop two-column form. */
+.v-check--phone { max-width: 38rem; gap: 1rem; }
+.v-check--phone .c-mast h1 { font-size: clamp(2rem, 6vw, 2.75rem); }
+.v-check--phone .c-route { grid-template-columns: minmax(0, 1fr); gap: .12rem; padding-block: 0 .35rem; }
+.v-check--phone .c-step-line { justify-content: space-between; }
+.v-check--phone .c-page-step { padding: 0; border: 0; text-align: end; }
+.v-check--phone .c-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.v-check--phone .c-steps button { min-height: 44px; min-width: 0; padding: .25rem .08rem; justify-content: center; gap: .2rem; line-height: 1.15; }
+.v-check--phone .c-steps .n { display: none; }
+.v-check--phone .c-steps button:disabled { cursor: default; color: var(--ink-2); }
+.v-check--phone .c-steps button.done { border-bottom-color: var(--ink-3); }
+.v-check--phone .c-panel-head h2 { font-size: clamp(1.6rem, 5.5vw, 2rem); }
+.v-check--phone :is(.c-work, .c-result-layout) { grid-template-columns: minmax(0, 1fr); }
+.v-check--phone .c-phone-instruction, .v-check--phone .c-phone-sources { display: grid; min-width: 0; gap: .8rem; }
+.v-check--phone .i-svg { max-height: clamp(8.4rem, 25svh, 13.5rem); }
+.v-check--phone .c-instr figcaption { padding: .75rem; gap: .55rem; }
+.v-check--phone .c-instr-head, .v-check--phone .c-instr figcaption > .fine { display: none; }
+.v-check--phone .c-instr-row { display: flex; justify-content: space-between; }
+.v-check--phone .c-phone-source { display: grid; align-items: center; grid-template-columns: auto minmax(0,1fr) 1.15rem; gap: .75rem; width: 100%; min-height: 5.25rem; padding: clamp(.7rem, 3vw, 1.15rem); border: 1px solid var(--hair-strong); border-radius: var(--r-panel); background: var(--surface); color: var(--ink); text-align: start; }
+.v-check--phone .c-phone-source:first-child { background: var(--plate, #DCE8FE); border-color: var(--brand); }
+.v-check--phone .c-source-icon { display: grid; place-items: center; width: 2.7rem; height: 2.7rem; color: var(--brand); background: var(--brand-tint); border-radius: var(--r-control); }
+.v-check--phone .c-phone-source:first-child .c-source-icon { color: var(--on-brand); background: var(--brand); }
+.v-check--phone .c-source-copy { display: grid; min-width: 0; gap: .1rem; }
+.v-check--phone .c-source-copy strong { font: 600 var(--t-body)/1.25 var(--sans); }
+.v-check--phone .c-source-copy > span, .v-check--phone .c-picker-status { color: var(--ink-2); font-size: var(--t-small); }
+.v-check--phone .c-phone-source > .ico { width: 1.15rem; height: 1.15rem; color: var(--brand); }
+.v-check--phone .c-picker-status:empty { display: none; }
+.v-check--phone .c-phone-source:disabled { border-style: dashed; }
+.v-check--phone .c-form { gap: .85rem; padding: 0; border: 0; background: none; }
+.v-check--phone .c-agreement { background: var(--surface); }
+.v-check--phone .c-phone-receipt { display: grid; gap: .1rem; padding-inline-start: .75rem; border-inline-start: 3px solid var(--brand); }
+.v-check--phone .c-phone-receipt > span:first-child { color: var(--ink-2); font-size: var(--t-min); }
+.v-check--phone .c-phone-receipt > span:last-child { font-weight: 600; unicode-bidi: plaintext; }
+.v-check--phone .btn--cta { width: 100%; min-height: var(--target); }
+.v-check--phone .actions { display: grid; grid-template-columns: minmax(0, 1fr); gap: .5rem; }
+.v-check--phone .c-phone-clock { color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.v-check--phone .c-phone-live .c-live-facts { background: var(--surface); }
+@media (max-width: 374px) {
+  .v-check--phone .c-steps .n { display: inline; }
+  .v-check--phone .c-steps .s { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+}

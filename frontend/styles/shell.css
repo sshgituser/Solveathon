@@ -1,0 +1,97 @@
+/* One masthead. On narrow screens the same labelled navigation becomes a thumb bar. */
+html { scroll-padding-block: 86px 18px; }
+body { min-width: 0; }
+.rail { position: sticky; top: 0; z-index: 40; background: var(--surface); border-bottom: 1px solid var(--hair); }
+.rail-inner { max-width: var(--measure); min-height: 72px; margin-inline: auto; padding: 0 var(--gutter); display: flex; align-items: center; gap: clamp(16px, 2.6vw, 42px); }
+.rail-brand { display: inline-flex; align-items: center; gap: 9px; min-height: 52px; color: var(--ink); text-decoration: none; }
+.rail-logo-box { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: var(--blueprint); color: white; --mark-accent: var(--joint); }
+.rail-logo { width: 37px; height: 37px; }
+.rail-word { font: 570 2.05rem/.95 var(--serif); letter-spacing: -.07em; }
+.rail-nav { display: flex; align-items: center; gap: 2px; align-self: stretch; }
+.rail-nav a { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 48px; padding: 7px clamp(8px, .85vw, 16px); border-radius: 8px; color: var(--ink-2); font: 500 var(--t-small)/1.15 var(--sans); text-align: center; text-decoration: none; touch-action: manipulation; }
+.rail-nav a .ico { width: 19px; height: 19px; }
+.rail-nav a[aria-current="page"] { background: var(--brand-tint); color: var(--brand-strong); font-weight: 650; }
+.rail-nav a[aria-current="page"]::after { content: ""; position: absolute; height: 3px; left: 12px; right: 12px; bottom: 0; background: var(--brand); border-radius: 2px; }
+.rail-foot { margin-left: auto; display: flex; align-items: center; gap: clamp(10px, 1.5vw, 22px); }
+.engine { display: inline-flex; align-items: center; gap: 6px; font: 500 var(--t-min)/1.2 var(--sans); color: var(--ink-2); }
+.engine .ico { width: 19px; height: 19px; }
+.engine[data-state="down"] .ico { color: var(--stop); }
+.lang { display: flex; align-items: center; gap: 1px; }
+.lang button { padding: 0 9px; min-height: 44px; min-width: 44px; border: none; border-radius: 8px; background: none; color: var(--ink-2); font: 500 var(--t-min)/1 var(--sans); }
+.lang button[aria-pressed="true"] { background: var(--sunk); color: var(--ink); font-weight: 650; text-decoration: underline; text-underline-offset: 4px; }
+body.bare .rail-nav, body.bare .engine { display: none; }
+.skip { position: absolute; left: var(--gutter); top: 8px; transform: translateY(-180%); padding: 12px 18px; background: var(--blueprint); color: white; z-index: 2; }
+.skip:focus-visible { transform: none; }
+.rail :focus-visible { outline-color: var(--brand); box-shadow: 0 0 0 3px var(--surface); }
+@media (hover:hover) { .rail-nav a:not([aria-current]):hover, .lang button:not([aria-pressed="true"]):hover { background: var(--ground); color: var(--ink); } }
+#view { position: relative; z-index: 1; min-width: 0; max-width: var(--measure); margin-inline: auto; padding: clamp(24px, 3.2vw, 50px) var(--gutter) var(--s6); }
+#view.enter { animation: view-in 160ms ease both; }
+@keyframes view-in { from { opacity: .65; } }
+
+/* The canvas is fixed, but only the intersection with the active figure slot is drawn. */
+#stage, #stage-overlay { position: fixed; inset: 0; z-index: 20; width: 100vw; height: 100svh; pointer-events: none; }
+#stage-overlay { z-index: 21; overflow: hidden; }
+#stage-overlay text { font: 500 14px var(--sans); fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 4px; stroke-linejoin: round; }
+#stage-overlay .lead-line { stroke: var(--ink-3); stroke-width: 1; }
+[data-stage-slot] { position: relative; min-height: 240px; }
+.stage-fallback { position: absolute; inset: 0; display: grid; place-items: center; }
+.stage-fallback svg { width: min(100%, 520px); height: 100%; }
+.arm .bone { fill: none; stroke: var(--ink); stroke-width: 15; stroke-linecap: round; stroke-linejoin: round; }
+.arm .target, .arm .arc-rest { fill: none; stroke: var(--hair-strong); stroke-width: 3; stroke-dasharray: 3 10; stroke-linecap: round; }
+.arm .arc { fill: none; stroke: var(--brand); stroke-width: 9; stroke-linecap: round; }
+.arm .joint { fill: var(--mint); stroke: var(--ink); stroke-width: 5; }
+.arm text { fill: var(--ink-2); font: 500 15px var(--sans); }
+.arm[data-look="uncertain"] .bone { stroke-dasharray: 1 30; }
+.arm[data-look="nopose"] .bone { stroke: var(--ink-3); stroke-width: 3; stroke-dasharray: 3 12; }
+.arm[data-look="nopose"] .arc, .arm[data-look="uncertain"] .arc, .arm[data-look="off"] .arc { opacity: 0; }
+.arm[data-look="off"] { opacity: .3; }
+.figure-box { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: var(--s1); min-width: 0; }
+.figure-box [data-stage-slot] { min-height: 200px; }
+.figure-foot { position: relative; z-index: 22; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; min-height: 36px; }
+.figure-foot .fine { max-width: 38em; }
+.fig-slot { cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; border-radius: var(--r-control); }
+.fig-slot.grabbing { cursor: grabbing; }
+.fig-bar { position: relative; z-index: 23; display: flex; align-items: center; justify-content: space-between; gap: 6px; min-height: 48px; container-type: inline-size; }
+.fig-hint { font-size: var(--t-min); color: var(--ink-2); white-space: nowrap; }
+.fig-hint.gone { visibility: hidden; }
+.fig-tools { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 6px; margin-left: auto; }
+.fig-turn { display: inline-flex; border: 1px solid var(--hair-strong); border-radius: var(--r-control); background: var(--surface); }
+.fig-btn { display: grid; place-items: center; width: 44px; height: 44px; border: 0; border-radius: 8px; background: none; color: var(--ink); touch-action: manipulation; }
+.fig-btn:focus-visible, .fig-tools .btn:focus-visible { outline-offset: -4px; }
+.fig-bend { display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 10px; border: 1px solid var(--hair-strong); border-radius: var(--r-control); background: var(--surface); font-size: var(--t-min); font-weight: 550; color: var(--ink-2); }
+.fig-range { width: clamp(72px, 10vw, 124px); accent-color: var(--brand); cursor: pointer; }
+.fig-tools > .btn { min-height: 44px; }
+@container (max-width:620px) { .fig-hint { display:none; } .fig-bend-text { display:none; } }
+@container (max-width:500px) { .fig-tools > .btn { font-size: 0; padding: 0 10px; gap: 0; } }
+@media (max-width:1100px) { .engine span { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); } .rail-nav a { gap:5px; } }
+@media (max-width:900px) {
+  html { scroll-padding-block: 12px calc(var(--tabbar-h) + 18px); }
+  body:not(.bare) { padding-bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom)); }
+  .rail { position: relative; }
+  .rail-inner { min-height: 60px; }
+  .rail-logo-box { width: 35px; height: 35px; border-radius: 10px; }
+  .rail-logo { width: 32px; height: 32px; }
+  .rail-word { font-size: 1.85rem; }
+  .rail-nav { position: fixed; left: 0; right: 0; bottom: 0; display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 0; background: var(--surface); border-top: 1px solid var(--hair); min-height: calc(var(--tabbar-h) + env(safe-area-inset-bottom)); padding: 0 2px env(safe-area-inset-bottom); }
+  .rail-nav a { flex-direction: column; gap: 4px; padding: 5px 1px; border-radius: 0; font-size: var(--t-min); }
+  .rail-nav a[aria-current="page"]::after { top: 0; bottom: auto; }
+  .rail-nav a .ico { width: 20px; height: 20px; }
+  #view { padding-bottom: var(--s4); }
+}
+.nav-glyph { display:inline-grid; place-items:center; }
+@media (max-width:900px) {
+  .rail-nav { padding-inline:max(2px,env(safe-area-inset-left)) max(2px,env(safe-area-inset-right)); }
+  .rail-nav a { min-width:0; gap:2px; font-size:.82rem; }
+  .rail-nav .nav-glyph { width:min(48px,100%); height:27px; border-radius:16px; }
+  .rail-nav a[aria-current="page"] { background:transparent; }
+  .rail-nav a[aria-current="page"] .nav-glyph { background:var(--brand-tint); }
+  .rail-nav a[aria-current="page"]::after { display:none; }
+}
+@media (max-width:600px) {
+  .rail-inner { min-height:54px; gap:8px; padding-inline:max(var(--gutter),env(safe-area-inset-left)) max(var(--gutter),env(safe-area-inset-right)); }
+  .rail { padding-top:env(safe-area-inset-top); }
+  .rail-brand { min-height:48px; }
+  .rail-word { font-size:1.78rem; }
+  .lang button { min-height:48px; min-width:48px; }
+  .rail-nav a:focus-visible, .lang button:focus-visible { outline-offset:-3px; }
+}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self'; img-src 'self' data: blob:; style-src 'self'; font-src 'self'; script-src 'self'">
+<title>Qolda lab</title>
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/components.css">
+<link rel="stylesheet" href="styles/shell.css">
+<link rel="stylesheet" href="styles/lab.css">
+</head>
+<body class="lab">
+<!-- Development page: exercises the 3D stage outside the app. Not linked from the app. -->
+<main class="lab-main">
+  <div class="lab-slot" id="slot-a" data-stage-slot></div>
+  <div class="lab-slot lab-slot--small" id="slot-b" data-stage-slot></div>
+  <pre id="lab-log"></pre>
+</main>
+<canvas id="stage"></canvas>
+<svg id="stage-overlay" aria-hidden="true"></svg>
+<script type="module" src="src/stage/lab.js"></script>
+</body>
+</html>

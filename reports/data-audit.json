@@ -1,0 +1,44 @@
+{
+  "all_mp4": 491,
+  "archive_crc_size_paths_matched": 491,
+  "archive_sha256": "1f39465d2509026ab3b178d8a5d7c5715ca2769b5de37e369f44f6e4ca46af29",
+  "assignment_digest_sha256": "a7bf1ee5dc6d55029cd4206259158d1d436f8eb48f4815c0d3c70887e598aeb4",
+  "data_doi": "10.17632/49h9dcwx5v.1",
+  "e02_total": 127,
+  "quarantined": {
+    "label_conflict": 10
+  },
+  "schema": "seriq.audit.v1",
+  "splits": {
+    "test": {
+      "complete": 10,
+      "incomplete": 10,
+      "total": 20
+    },
+    "train": {
+      "complete": 30,
+      "incomplete": 47,
+      "total": 77
+    },
+    "validation": {
+      "complete": 10,
+      "incomplete": 10,
+      "total": 20
+    }
+  },
+  "subjects": {
+    "test": [
+      "08"
+    ],
+    "train": [
+      "01",
+      "02",
+      "03",
+      "04"
+    ],
+    "validation": [
+      "05"
+    ]
+  },
+  "unique_e02_sha256": 127
+}
